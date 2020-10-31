@@ -1,0 +1,157 @@
+commit 111dbcfbfb572dc4c13fee6f8f4f90627968b074
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:50:59 2020 +0200
+
+    Vika lisäys
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 02139a3bf3ea85c5f641eb3c2daccbd11e3fb7a1
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:37:12 2020 +0200
+
+    luodaan tiedostoja ja koitetaan vielä kerran
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d0374eae73c7a561e2a8a90774c411c2a0915eb9
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:36:15 2020 +0200
+
+    vituiks män poistetaan teidostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit db4d0bccef03c7ef4ab8f1d6a4b9cc92c2cc6fa9
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:16:46 2020 +0200
+
+    Koitetaan uudestaan harjoittelua
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8ca12de3b3ae3f9d8333eff926ef3a78be5d0fe0
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:15:17 2020 +0200
+
+    poistettu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d890330850ecee8e61b4b754a3bc67acd07a5418
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 09:02:39 2020 +0200
+
+    Lisää tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 15983059453fc5e48fc56e33b7e2b20026e6b0d6
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 08:24:08 2020 +0200
+
+    eka ja kolmas muokkau~s
+
+ eka.txt    | 3 +++
+ kolmas.txt | 6 ++++++
+ 2 files changed, 9 insertions(+)
+
+commit 3c4bcb3b319ea536b472914a106dcdb81d867ba9
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 08:20:19 2020 +0200
+
+    uudelleen nimentä
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a9348175ef889f96eb4621b3d196eba547e1d12f
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 08:17:49 2020 +0200
+
+    poistettu toinen2
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 77ae8c29698ef587a5f633d3b35ea5a7fb610f80
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 08:11:03 2020 +0200
+
+    tiedosto.txt muokkaus
+
+ tiedosto.txt | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+commit 31d9ef4995b4c9adcea017e77e3897bf15cb52fc
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 08:08:08 2020 +0200
+
+    tiedosto.txt html lisäys
+
+ tiedosto.txt | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 60 insertions(+), 1 deletion(-)
+
+commit e52e62bbc0581d9835a654f17fe53bd86ca69fcb
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 07:55:49 2020 +0200
+
+    hakemisto stuff lisätty
+
+ stuff/prk | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b83a2ef004f8518ec84239ef9f77bdbe4d8c9eff
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 07:53:57 2020 +0200
+
+    toinen ja kolams lisäys
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 4f05dd0c7c7d19b9f02a4d47fde5fae2f3f6ae79
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 07:50:30 2020 +0200
+
+    lisää kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 37284d6b93885af8fd207f696c9d324b5642d10f
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 07:40:11 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit ba2bfbf32d3fbe3c2b78e69a5b1876bd0e784136
+Author: Eero Mäki-Kokkila <eerojmk@gmail.com>
+Date:   Sat Oct 31 07:29:07 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
