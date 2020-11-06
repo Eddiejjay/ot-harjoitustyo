@@ -12,3 +12,7 @@
 #### [MaksukorttiTest.java](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/laskarit/viikko2/Maksukortti/src/test/java/MaksukorttiTest.java)
 #### [KassapaateTest.java](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/laskarit/viikko2/Unicafe/src/test/java/KassapaateTest.java)
 #### [UnicafeTestiKattavuus](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/laskarit/viikko2/UnicafeTestikattavuus.png)
+
+
+### Harjoitustyö 
+#### [StudyBloX](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/StudyBloX/dokumentaatio)
