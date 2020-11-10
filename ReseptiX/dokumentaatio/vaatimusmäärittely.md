@@ -6,7 +6,7 @@ Sovelluksen avulla käyttäjä voi katsoa ja lisätä reseptejä.
 
 ## Käyttäjät
 
-Perusversiossa kurssin alkupuolella sovelluksessa on yksi käyttäjärooli, normaali käyttäjä.
+Perusversiossa sovelluksessa on yksi käyttäjärooli, normaali käyttäjä.
 
 ## Käyttöliittymäluonnos 
 
