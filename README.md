@@ -15,4 +15,6 @@
 
 
 ### Harjoitustyö 
-#### [StudyBloX](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/StudyBloX/dokumentaatio)
+#### [ReseptiX](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/ReseptiX)
+##### [Vaatimusmäärittely](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiX/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
+##### [Työaikakirjanpito](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiX/dokumentaatio/tuntikirjanpito.md)
