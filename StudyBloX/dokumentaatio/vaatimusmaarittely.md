@@ -1,9 +1,0 @@
-# Vaatimusmäärittely
-
-## Sovelluksen tarkoitus 
-
-
-## Käyttäjät 
-
-
-
