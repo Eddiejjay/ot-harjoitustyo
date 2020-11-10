@@ -2,49 +2,51 @@
 
 ## Sovelluksen tarkoitus 
 
-Sovelluksen avulla käyttäjä voi hallinnoida reseptejään.  
+Sovelluksen avulla käyttäjä voi katsoa ja lisätä reseptejä. 
 
 ## Käyttäjät
-Sovelluksella on yksi käyttäjärooli, normaali käyttäjä.
+
+Perusversiossa kurssin alkupuolella sovelluksessa on yksi käyttäjärooli, normaali käyttäjä.
 
 ## Käyttöliittymäluonnos 
 
-Sovelluksen perusversiossa on kolne näkymää. 
+Sovelluksen perusversiossa on kolme näkymää. 
 
 
-# KUVA TÄHÄN
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiX/dokumentaatio/Kuvat/Kayttoliittyma.jpg">
 
 
-Kun sovelluksen avaa se aukeaa Reseptit näkymään, josta käyttäjä voi selata
-reseptejään. Reseptit näkymästä pääsee yksittäiseen reseptiin tuplaklikkaamalla
-ruoan nimeä. Uusi resepti näkymä aukeaa kun käyttäjä painaa nappia "Lisää resepti".
+Käyttäjän avatessa sovelluksen, se aukeaa Reseptit- näkymään. Aloitusnäkymästä käyttäjä pääsee yksittäisen reseptin näkymään tuplaklikkaamalla ruoan nimeä.
+Käyttäjä pääsee siirtymään Uusi resepti- näkymään klikkaamalla nappia Lisää resepti.
+
 
 ## Perusversion tarjoama toiminnallisuus
 
-*käyttäjä näkee reseptinsä
-*käyttäjä voi lisätä  uuden reseptin 
+- käyttäjä näkee reseptinsä
+
+- käyttäjä voi lisätä  uuden reseptin 
 
 
 ## Jatkokehitysideoita 
 
-Perusversion jälkeen sovellukseen lisätään toiminnallisuuksia ajan salliessa
+Sovelluksen perusversion valmistuttua, sovellukseen lisätään toiminnallisuuksia ajan salliessa seuraavasti.
  
+- viikko näkymä, jonka avulla käyttäjä voi suunnitella viikon ruokalistan 
+  - reseptien arvonta päivälle 
+  - reseption arvonta koko viikolle 
 
-*Viikkokohtaisen ruokalistan tekeminen. Kalenteriin voi lisätä reseptin
-valikosta haluamalleen päivälle. Käyttäjän halutessa päivän ruoan voi myös arpoa
+- reseptin muokkaus 
 
-*Reseptin muokkaus 
+- kommentin lisääminen reseptiin 
 
-*Kommentin lisääminen reseptiin 
-
-*Käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
+- käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
 eri rekisteröityneet käyttäjät omilla resepteillään
 
-*Käyttäjätunnuksen poisto 
+- käyttäjätunnuksen poisto 
 
 
 ## Toimintaympäristön rajoitteet
-*Reseptit tallennetaan paikallisen koneen levylle
-*Sovellus tulee pystyä suorittamaan, kääntämään ja testaamaan komentoriviltä
-käsin Helsingin Yliopiston Linux-koneilla tai uusimmat päivitykset
+- reseptit tallennetaan paikallisen koneen levylle
+- sovellus tulee pystyä suorittamaan, kääntämään ja testaamaan komentoriviltä
+käsin Helsingin yliopiston Linux-koneilla tai uusimmat päivitykset
 sisältävällä cubbli-linuxilla. 
