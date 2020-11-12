@@ -13,7 +13,7 @@ Perusversiossa sovelluksessa on yksi käyttäjärooli, normaali käyttäjä.
 Sovelluksen perusversiossa on kolme näkymää. 
 
 
-<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiX/dokumentaatio/Kuvat/Kayttoliittyma.jpg">
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/Kayttoliittyma.jpg">
 
 
 Käyttäjän avatessa sovelluksen, se aukeaa Reseptit- näkymään. Aloitusnäkymästä käyttäjä pääsee yksittäisen reseptin näkymään tuplaklikkaamalla ruoan nimeä.
