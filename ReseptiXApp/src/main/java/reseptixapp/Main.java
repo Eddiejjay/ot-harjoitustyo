@@ -1,7 +1,7 @@
 package reseptixapp;
 
 
-import ReseptiXApp.ui.ReseptiXUi;
+import reseptixapp.ui.ReseptiXUi;
 
 public class Main {
     public static void main(String[] args) {
