@@ -4,3 +4,9 @@ Sovelluksen ensimmäisessä versiossa käyttäjä voi lisätä reseptejään sov
  ## Dokumentaatio
  - ##### [Vaatimusmäärittely](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
  - ##### [Työaikakirjanpito](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/tuntikirjanpito.md)
+
+### Komentorivikomennot 
+
+#### 
+##### Koodin suoritus 
+mvn compile exec:java -Dexec.mainClass=reseptixapp.Main
