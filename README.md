@@ -7,6 +7,10 @@ Sovelluksen ensimmäisessä versiossa käyttäjä voi lisätä reseptejään sov
 
 ### Komentorivikomennot 
 
-#### 
-##### Koodin suoritus 
+
+#### Koodin suoritus 
 mvn compile exec:java -Dexec.mainClass=reseptixapp.Main
+#### Testien ajo
+mvn test
+##### Testikattavuusraportti
+mvn test jacoco:report
