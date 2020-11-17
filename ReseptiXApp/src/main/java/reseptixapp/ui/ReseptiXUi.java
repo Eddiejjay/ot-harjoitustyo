@@ -7,6 +7,8 @@ package reseptixapp.ui;
 
 
 
+import domain.Recipe;
+import domain.RecipeManagement;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -30,58 +32,59 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ReseptiXUi extends Application {
+    
+private RecipeManagement recipeManagement = new RecipeManagement(); 
 
     @Override
     public void start(Stage window) {
        window.setTitle("ReseptiX");{
         
-  
+  //HOME näkymä komponentit
        Button addRbutton = new Button ("Lisää resepti");
           addRbutton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
        Button button2 = new Button("VasenNappi");
           button2.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-       Button selectButton = new Button("Valitse");
-          selectButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-       ListView listView = new ListView();
-          listView.getItems().add("Kaalilaatikko");
-          listView.getItems().add("GorillaBurger");
-          listView.getItems().add("HappoKalat");
-          listView.setPrefWidth(100);
-          listView.setPrefHeight(200);
+        Label select = new Label("Valitse resepti");
           
-         
-  
+    
+  // Lisää resepti- näkymä komponentit 
        Button backButton = new Button("Back");
           backButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
        Button addRecipe = new Button("Lisää resepti");
           addRecipe.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-       TextField textField = new TextField("Kirjoita resepti tähän!");
-          textField.setPrefWidth(100);
-          textField.setPrefHeight(200);
-
+       TextField newRecipeText = new TextField("Kirjoita resepti tähän!");
+          newRecipeText.setPrefWidth(100);
+          newRecipeText.setPrefHeight(200);
+       TextField recipeName = new TextField("Ruoan nimi");
           
-            
+       //Single resepti page komponentit      
        Label foodName = new Label ("Kaalilaatikko");
        Label recipeText = new Label("3 kiloa kaalia, 13 g jauhelihaa, 15 hyppystä suolaa");
        Button backButton2 = new Button("back");
        
 
+        // home näkymän asettelu
        BorderPane borderPane = new BorderPane();
           borderPane.setBottom(addRbutton);
           borderPane.setTop(new Label("Reseptit"));
-          borderPane.setCenter(listView);
-          borderPane.setRight(selectButton);
+          borderPane.setRight(select);
+          VBox vboxRecepies = new VBox();
+          borderPane.setCenter(vboxRecepies);
           
-      
+          
+      //lisää resepti näkymän asettelu
        BorderPane borderPane2 = new BorderPane();
         HBox hbox = new HBox();
            hbox.getChildren().add(backButton);
            hbox.getChildren().add(new Label("Uusi Resepti"));
+        VBox vbox = new VBox();
+            vbox.getChildren().add(recipeName);
+            vbox.getChildren().add(newRecipeText);
         borderPane2.setTop(hbox);
-        borderPane2.setCenter(textField);
+        borderPane2.setCenter(vbox);
         borderPane2.setBottom(addRecipe);
         
-      
+      //yhden reseptin asettelu
         BorderPane borderPane3 = new BorderPane();
         borderPane3.setTop(foodName);
         borderPane3.setCenter(recipeText);
@@ -100,20 +103,31 @@ public class ReseptiXUi extends Application {
         });
       
         backButton.setOnAction((event)->{
+            newRecipeText.setText("Kirjoita resepti tähän!");
+            recipeName.setText("Ruoan nimi");
+           
            window.setScene(home);
        });
-           
-       selectButton.setOnAction((event)->{
-            ObservableList selectedIndices = listView.getSelectionModel().getSelectedIndices();
-            window.setScene(recipe);
-            
-           
-       });
+   
        
        backButton2.setOnAction((event) ->{
             window.setScene(home);
             
         });
+       
+       addRecipe.setOnAction((event)->{
+          String instruction = newRecipeText.getText();
+          String name = recipeName.getText();
+          recipeManagement.createRecipe(name, instruction);
+          Button recipeButton = new Button(name);
+          vboxRecepies.getChildren().add(recipeButton);
+          window.setScene(home);
+         
+          
+       });
+       
+                   
+      
         
         
        
