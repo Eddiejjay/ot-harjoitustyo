@@ -17,6 +17,9 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -24,16 +27,27 @@ public class ReseptiXUi extends Application {
 
     @Override
     public void start(Stage ikkuna) {
-        Button nappi = new Button("Tämä on nappi");
+       ikkuna.setTitle("Reseptit");{
+        
+       Label text= new Label("testikenttä");
+       Button button = new Button ("Lisää resepti");
+       ScrollPane scrollPane = new ScrollPane();
+    
+      
 
-        FlowPane komponenttiryhma = new FlowPane();
-        komponenttiryhma.getChildren().add(nappi);
+        //asettelu 
 
-        Scene nakyma = new Scene(komponenttiryhma);
-
+       BorderPane asettelu = new BorderPane();
+      asettelu.setBottom(button);
+      asettelu.setTop(new Label("Reseptit"));
+      asettelu.setCenter(scrollPane);
+      asettelu.setRight(text);
+      
+        Scene nakyma = new Scene(asettelu);
+        
         ikkuna.setScene(nakyma);
         ikkuna.show();
-    }
+    }}
 
     public static void main(String[] args) {
         launch(ReseptiXUi.class);
