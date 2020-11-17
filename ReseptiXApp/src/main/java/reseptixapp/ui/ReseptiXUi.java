@@ -52,10 +52,10 @@ private RecipeManagement recipeManagement = new RecipeManagement();
           backButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
        Button addRecipe = new Button("Lisää resepti");
           addRecipe.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-       TextField newRecipeText = new TextField("Kirjoita resepti tähän!");
+       TextField newRecipeText = new TextField("");
           newRecipeText.setPrefWidth(100);
           newRecipeText.setPrefHeight(200);
-       TextField recipeName = new TextField("Ruoan nimi");
+       TextField recipeName = new TextField("");
           
        //Single resepti page komponentit      
        Label foodName = new Label ("Kaalilaatikko");
@@ -72,14 +72,21 @@ private RecipeManagement recipeManagement = new RecipeManagement();
           borderPane.setCenter(vboxRecepies);
           
           
+          
       //lisää resepti näkymän asettelu
        BorderPane borderPane2 = new BorderPane();
         HBox hbox = new HBox();
            hbox.getChildren().add(backButton);
            hbox.getChildren().add(new Label("Uusi Resepti"));
         VBox vbox = new VBox();
-            vbox.getChildren().add(recipeName);
-            vbox.getChildren().add(newRecipeText);
+        HBox nameAndField = new HBox();
+           nameAndField.getChildren().add(new Label("Ruoan nimi"));
+           nameAndField.getChildren().add(recipeName);
+        HBox writeRecipeHere = new HBox();
+            writeRecipeHere.getChildren().add(new Label("Kirjoita resepti tähän"));
+            writeRecipeHere.getChildren().add(newRecipeText);
+            vbox.getChildren().add(nameAndField);
+            vbox.getChildren().add(writeRecipeHere);
         borderPane2.setTop(hbox);
         borderPane2.setCenter(vbox);
         borderPane2.setBottom(addRecipe);
@@ -103,8 +110,8 @@ private RecipeManagement recipeManagement = new RecipeManagement();
         });
       
         backButton.setOnAction((event)->{
-            newRecipeText.setText("Kirjoita resepti tähän!");
-            recipeName.setText("Ruoan nimi");
+            newRecipeText.setText("");
+            recipeName.setText("");
            
            window.setScene(home);
        });
@@ -115,12 +122,18 @@ private RecipeManagement recipeManagement = new RecipeManagement();
             
         });
        
+    
+       
        addRecipe.setOnAction((event)->{
           String instruction = newRecipeText.getText();
           String name = recipeName.getText();
           recipeManagement.createRecipe(name, instruction);
           Button recipeButton = new Button(name);
           vboxRecepies.getChildren().add(recipeButton);
+           recipeName.setText("");
+           newRecipeText.setText("");
+           
+          
           window.setScene(home);
          
           
