@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import dao.RecipeSaveTest;
 import domain.RecipeManagement;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -41,12 +42,15 @@ public class RecipeManagementTest {
     public void hello() {}
     
     @Test
-    public void createRecipeLisaaReseptinHashMappiin(){
-        RecipeManagement recipemanagement = new RecipeManagement();
+    public void createRecipeLisaaReseptinListalle(){
+        RecipeSaveTest recipeDao = new RecipeSaveTest();
+        RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
+    
         
-        recipemanagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
-        String vastaus = recipemanagement.getOne(1).getInstruction();
-        assertEquals("23 kiloa kaalia", vastaus);
+        recipeManagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
+         recipeManagement.createRecipe("pullaa", "23 kiloa kaalia");
+        int vastaus = recipeDao.getAll().size();
+        assertEquals(2, vastaus);
     }
     
    

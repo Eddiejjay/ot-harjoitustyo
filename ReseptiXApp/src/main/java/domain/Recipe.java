@@ -13,13 +13,11 @@ import java.util.ArrayList;
  */
 public class Recipe {
     private int id; 
-   // private ArrayList<String> ingredients;
     private String name;
     private String instruction;
     
-    public Recipe(int id, String name, String instruction){
-        this.id = id;
-        //this.ingredients = ingredients;
+    public Recipe(String name, String instruction){
+      
         this.instruction = instruction;
         this.name = name;
     }
@@ -27,22 +25,9 @@ public class Recipe {
         this.id = id;
     }
     
-
-    
     public int getId(){
         return this.id;
     }
-//    public void setIngredients(ArrayList ingredients){
-//        this.ingredients=ingredients;
-//    }
-//    public void addIngredient(String ingredient){
-//        this.ingredients.add(ingredient);
-//        
-//    }
-//    
-//    public ArrayList getIngredients(){
-//        return this.ingredients;
-//    }
     
     public void setInstruction(String instruction){
         this.instruction = instruction;
@@ -54,7 +39,7 @@ public class Recipe {
        
     }
     
-    public void setNimi(String name){
+    public void setName(String name){
         this.name = name;
     }
     public String getName(){

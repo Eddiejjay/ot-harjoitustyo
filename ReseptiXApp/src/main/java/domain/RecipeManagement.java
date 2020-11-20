@@ -5,6 +5,7 @@
  */
 package domain;
 
+import dao.RecipeSaveTest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,22 +16,23 @@ import java.util.Map;
  * @author mazeero
  */
 public class RecipeManagement {
-    public Map<Integer,Recipe> recipes;
+   private RecipeSaveTest recipeDao;
     
-    public RecipeManagement(){
-        recipes = new HashMap<>();
-    }
-    
-   public void createRecipe(String name, String instruction){
-       int id = recipes.size() +1;
-       this.recipes.put(id,new Recipe(id,name,instruction));
+    public RecipeManagement(RecipeSaveTest recipeDao){
+        this.recipeDao = recipeDao;
        
+        
+          }
+    
+   public Recipe createRecipe (String name, String instruction){
+         Recipe recipe = new Recipe (name,instruction);
+      return this.recipeDao.create(recipe);
   
    }
-   public Map getAll(){
-       return this.recipes;
-   }
-    public Recipe getOne(int id){
-      return recipes.get(id);
+
+
+   
     }
-}
+
+
+

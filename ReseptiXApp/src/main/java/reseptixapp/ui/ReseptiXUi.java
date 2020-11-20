@@ -7,8 +7,11 @@ package reseptixapp.ui;
 
 
 
+import dao.RecipeSaveTest;
 import domain.Recipe;
 import domain.RecipeManagement;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,10 +20,13 @@ import javafx.stage.Stage;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -31,15 +37,36 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
+
 public class ReseptiXUi extends Application {
     
-private RecipeManagement recipeManagement = new RecipeManagement(); 
+    private Scene home;
+    private Scene newRecipe;
+    private Scene recipe;
+ 
+    private RecipeSaveTest recipeDao = new RecipeSaveTest();
+    private RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
+    private ListView<Recipe> listview;
+    private Button listViewButton;
+    private BorderPane borderPane3;
+ 
+  
+    
+    
+    @Override
+    public void init() throws Exception {
+         RecipeSaveTest recipeDao = new RecipeSaveTest();
+         RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
+        
+    }
+    
 
     @Override
     public void start(Stage window) {
        window.setTitle("ReseptiX");{
         
-  //HOME näkymä komponentit
+    //HOME näkymä komponentit
        Button addRbutton = new Button ("Lisää resepti");
           addRbutton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
        Button button2 = new Button("VasenNappi");
@@ -47,31 +74,30 @@ private RecipeManagement recipeManagement = new RecipeManagement();
         Label select = new Label("Valitse resepti");
           
     
-  // Lisää resepti- näkymä komponentit 
+    // Lisää resepti- näkymä komponentit 
        Button backButton = new Button("Back");
           backButton.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
        Button addRecipe = new Button("Lisää resepti");
           addRecipe.setStyle("-fx-background-color: darkslateblue; -fx-text-fill: white;");
-       TextField newRecipeText = new TextField("");
+       TextArea newRecipeText = new TextArea("");
           newRecipeText.setPrefWidth(100);
           newRecipeText.setPrefHeight(200);
        TextField recipeName = new TextField("");
           
-       //Single resepti page komponentit      
-       Label foodName = new Label ("Kaalilaatikko");
-       Label recipeText = new Label("3 kiloa kaalia, 13 g jauhelihaa, 15 hyppystä suolaa");
+       //Single resepti page kompon//entit      
+      
        Button backButton2 = new Button("back");
        
 
         // home näkymän asettelu
-       BorderPane borderPane = new BorderPane();
+          BorderPane borderPane = new BorderPane();
           borderPane.setBottom(addRbutton);
           borderPane.setTop(new Label("Reseptit"));
           borderPane.setRight(select);
           VBox vboxRecepies = new VBox();
           borderPane.setCenter(vboxRecepies);
           
-          
+        
           
       //lisää resepti näkymän asettelu
        BorderPane borderPane2 = new BorderPane();
@@ -90,18 +116,21 @@ private RecipeManagement recipeManagement = new RecipeManagement();
         borderPane2.setTop(hbox);
         borderPane2.setCenter(vbox);
         borderPane2.setBottom(addRecipe);
+        Label onnistui = new Label ("");
+        borderPane2.setLeft(onnistui);
         
-      //yhden reseptin asettelu
-        BorderPane borderPane3 = new BorderPane();
-        borderPane3.setTop(foodName);
-        borderPane3.setCenter(recipeText);
-        borderPane3.setTop(backButton2);
+  
        
+    
+        this.home = new Scene(borderPane,450,300);
+        this.newRecipe = new Scene(borderPane2,450,300);
+      
         
-        Scene home = new Scene(borderPane,450,300);
-        Scene newRecipe = new Scene(borderPane2,450,300);
-        Scene recipe = new Scene (borderPane3,450,300);
-        
+           //RESEPTI nappien luonti
+            listViewButton = new Button("Valitse");
+         
+          borderPane.setRight(listViewButton);
+   
         
         
         addRbutton.setOnAction((event) ->{
@@ -122,34 +151,115 @@ private RecipeManagement recipeManagement = new RecipeManagement();
             
         });
        
-    
+       // etusivun valitse buttonin toiminta 
+      listViewButton.setOnAction((event) ->{   
+         Recipe resepti;
+       resepti =listview.getSelectionModel().getSelectedItem();
+                System.out.println(resepti.getInstruction());
+                System.out.println(resepti.getName());
+                
+                
+                    //yhden reseptin asettelu
+        borderPane3 = new BorderPane();
+       Label foodName = new Label (resepti.getName());
+       Label recipeText = new Label(resepti.getInstruction());
+        borderPane3.setRight(foodName);
+        borderPane3.setCenter(recipeText);
+        borderPane3.setTop(backButton2);
+        
+        this.recipe = new Scene(borderPane3,450,300);
+        window.setScene(recipe);
+                
+                 
+                  });   
+
+       
+      
        
        addRecipe.setOnAction((event)->{
+             
           String instruction = newRecipeText.getText();
           String name = recipeName.getText();
           recipeManagement.createRecipe(name, instruction);
-          Button recipeButton = new Button(name);
-          vboxRecepies.getChildren().add(recipeButton);
-           recipeName.setText("");
-           newRecipeText.setText("");
-           
+      
+         createListView();
+          listview.setCellFactory(param -> new ListCell<Recipe>() {
+             
+               @Override
+            protected void updateItem(Recipe item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null || item.getName() == null) {
+                    setText(null);
+                } else {
+                    setText(item.getName());
+                }
+            }
+         
+            
+        });
+         
           
+         recipeName.setText("");
+         newRecipeText.setText("");
+           borderPane.setCenter(listview);
           window.setScene(home);
          
           
        });
+
        
-                   
-      
-        
+    
         
        
         window.setScene(home);
         window.show();
-    }}
+    }} 
+    
+    
+    
 
+            
+               
+         public ListView<Recipe> createListView(){
+             listview = new ListView(createOlist());
+             return listview;
+             
+         }
+          
+       
+       
+       
+       public  ObservableList<Recipe> createOlist(){
+           ObservableList<Recipe> recipesOl = FXCollections.observableArrayList(recipeDao.getAll());
+             return recipesOl;
+       }
+       
+   
     public static void main(String[] args) {
         launch(ReseptiXUi.class);
     }
+    
+    
+
 } 
-        
+
+
+
+
+
+  //public Node createButtons(){
+//           VBox Vreseptit = new VBox();
+//           List<Recipe> reseptit = recipeDao.getAll();
+//           
+//           for (Recipe recipe:reseptit){
+//               Button button = new Button(recipe.getName());
+//               Vreseptit.getChildren().add(button);
+//               button.setOnAction((event)->{ 
+//                 
+//                   //Onnistuuko tähän jotenkin setACion jotta painallus vaihtaa näkymää yksittäiseen reseptiin? 
+//                   
+//               });
+//           }
+//           
+//          return Vreseptit;
