@@ -14,3 +14,7 @@ mvn compile exec:java -Dexec.mainClass=reseptixapp.Main
 mvn test
 ##### Testikattavuusraportti
 mvn test jacoco:report
+
+##### Checkstyle-raportti
+mvn jxr:jxr checkstyle:checkstyle
+
