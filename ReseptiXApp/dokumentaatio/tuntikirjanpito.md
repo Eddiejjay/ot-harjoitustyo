@@ -13,5 +13,6 @@
 | 18.11 |2h   |graafisen käyttöliittymän säätö mm. yksittäisen reseptin näkymän lisäys |
 | 19.11|   5h | listviewin linkittäminen valittuun näkymään (valitsemalla listviewistä reseptin käyttäjä pääsee yksittäisen reseptin näkymään) |
 | 23.11 |1,5h |reseptin arvonta toiminnallisuuden lisäys |
-
-|   |   | |
+| 23.11  |0,5h | checkstyle konfiguraatio |
+| | | |
+|  | | |
