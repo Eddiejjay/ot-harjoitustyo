@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  *
@@ -20,7 +21,7 @@ public class RecipeManagement {
     
     public RecipeManagement(RecipeSaveTest recipeDao){
         this.recipeDao = recipeDao;
-       
+        
         
           }
     
@@ -29,7 +30,16 @@ public class RecipeManagement {
       return this.recipeDao.create(recipe);
   
    }
-
+   
+   public Recipe getRandom(){ 
+       Random random = new Random();
+       List<Recipe> reseptit = recipeDao.getAll();
+     
+       
+       return  reseptit.get(random.nextInt(reseptit.size()));
+   }
+   
+ 
 
    
     }

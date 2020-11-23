@@ -44,12 +44,15 @@ public class ReseptiXUi extends Application {
     private Scene home;
     private Scene newRecipe;
     private Scene recipe;
+    private Scene recipeRandom;
  
     private RecipeSaveTest recipeDao = new RecipeSaveTest();
     private RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
     private ListView<Recipe> listview;
     private Button listViewButton;
     private BorderPane borderPane3;
+    private BorderPane borderPaneRandom;
+    Button randomButton = new Button("Satunnainen");
  
   
     
@@ -96,6 +99,13 @@ public class ReseptiXUi extends Application {
           borderPane.setRight(select);
           VBox vboxRecepies = new VBox();
           borderPane.setCenter(vboxRecepies);
+          listViewButton = new Button("Valitse");
+          
+          
+          VBox VboxHomeButtons = new VBox();
+          VboxHomeButtons.getChildren().addAll(listViewButton,randomButton);
+          borderPane.setRight(VboxHomeButtons);
+          
           
         
           
@@ -127,9 +137,7 @@ public class ReseptiXUi extends Application {
       
         
            //RESEPTI nappien luonti
-            listViewButton = new Button("Valitse");
-         
-          borderPane.setRight(listViewButton);
+          
    
         
         
@@ -169,7 +177,30 @@ public class ReseptiXUi extends Application {
         
         this.recipe = new Scene(borderPane3,450,300);
         window.setScene(recipe);
-                
+                  });      
+        
+        
+          
+        // Satunnainen resepti nappi 
+         randomButton.setOnAction((event) ->{   
+            Recipe resepti;
+            resepti = recipeManagement.getRandom();
+            borderPaneRandom = new BorderPane();
+            Label foodNameRandom = new Label (resepti.getName());
+            Label recipeTextRandom = new Label(resepti.getInstruction());
+            borderPaneRandom.setRight(foodNameRandom);
+            borderPaneRandom.setCenter(recipeTextRandom);
+            borderPaneRandom.setTop(backButton2);
+        
+           this.recipeRandom = new Scene(borderPaneRandom,450,300);
+           window.setScene(recipeRandom);
+          
+        
+        
+        
+        
+        
+        
                  
                   });   
 

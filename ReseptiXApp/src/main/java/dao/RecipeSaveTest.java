@@ -19,7 +19,7 @@ public class RecipeSaveTest {
    
     public RecipeSaveTest(){
         recipes = new ArrayList<>();
-        
+     
     }
     
     public List getAll(){
