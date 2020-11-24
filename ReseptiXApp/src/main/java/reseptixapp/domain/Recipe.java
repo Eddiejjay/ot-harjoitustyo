@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package reseptixapp.domain;
 
 import java.util.ArrayList;
 
@@ -16,33 +16,33 @@ public class Recipe {
     private String name;
     private String instruction;
     
-    public Recipe(String name, String instruction){
+    public Recipe(String name, String instruction) {
       
         this.instruction = instruction;
         this.name = name;
     }
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
     
-    public int getId(){
+    public int getId() {
         return this.id;
     }
     
-    public void setInstruction(String instruction){
+    public void setInstruction(String instruction) {
         this.instruction = instruction;
         
     }
     
-    public String getInstruction(){
+    public String getInstruction() {
         return this.instruction;
        
     }
     
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 }

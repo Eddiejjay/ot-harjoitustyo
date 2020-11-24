@@ -7,9 +7,9 @@ package reseptixapp.ui;
 
 
 
-import dao.RecipeSaveTest;
-import domain.Recipe;
-import domain.RecipeManagement;
+import reseptixapp.dao.RecipeSave;
+import reseptixapp.domain.Recipe;
+import reseptixapp.domain.RecipeManagement;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.application.Application;
@@ -46,7 +46,7 @@ public class ReseptiXUi extends Application {
     private Scene recipe;
     private Scene recipeRandom;
  
-    private RecipeSaveTest recipeDao = new RecipeSaveTest();
+    private RecipeSave recipeDao = new RecipeSave();
     private RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
     private ListView<Recipe> listview;
     private Button listViewButton;
@@ -59,7 +59,7 @@ public class ReseptiXUi extends Application {
     
     @Override
     public void init() throws Exception {
-         RecipeSaveTest recipeDao = new RecipeSaveTest();
+         RecipeSave recipeDao = new RecipeSave();
          RecipeManagement recipeManagement = new RecipeManagement(recipeDao);
         
     }

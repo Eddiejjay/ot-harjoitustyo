@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package reseptixapp.dao;
 
-import domain.Recipe;
+import reseptixapp.domain.Recipe;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,28 +13,27 @@ import java.util.List;
  *
  * @author mazeero
  */
-public class RecipeSaveTest {
+public class RecipeSave {
     private List<Recipe> recipes;
     
    
-    public RecipeSaveTest(){
+    public RecipeSave() {
         recipes = new ArrayList<>();
      
     }
     
-    public List getAll(){
+    public List getAll() {
         return recipes;
         
     }
-    private int generateId(){
+    private int generateId() {
         return recipes.size();
     }
     
-    public Recipe create(Recipe recipe)  {
+    public Recipe create(Recipe recipe) {
         recipe.setId(generateId());
         recipes.add(recipe);
-        return recipe;
-        
-   
-}}
+        return recipe;  
+    }  
+}
 

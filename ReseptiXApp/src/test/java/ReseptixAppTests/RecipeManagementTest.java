@@ -1,12 +1,14 @@
+package ReseptixAppTests;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import dao.RecipeSaveTest;
-import domain.Recipe;
-import domain.RecipeManagement;
+import reseptixapp.dao.RecipeSave;
+import reseptixapp.domain.Recipe;
+import reseptixapp.domain.RecipeManagement;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,28 +21,22 @@ import static org.junit.Assert.*;
  * @author mazeero
  */
 public class RecipeManagementTest {
-       private RecipeSaveTest recipeDao;
+       private RecipeSave recipeDao;
        private  RecipeManagement recipeManagement;
     
     public RecipeManagementTest() {
+        
     }
-    
- 
- 
-    
+   
     @Before
     public void setUp() {
-        recipeDao = new RecipeSaveTest();
+        recipeDao = new RecipeSave();
         recipeManagement = new RecipeManagement(recipeDao);
     }
     
-   
-    
-    
- 
     
     @Test
-    public void createRecipeAddsRecipeToList(){
+    public void createRecipeAddsRecipeToList() {
        
     
         
@@ -51,7 +47,7 @@ public class RecipeManagementTest {
     }
    
     @Test 
-        public void getRandomReturnsRecipe(){
+        public void getRandomReturnsRecipe() {
              recipeManagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
              Recipe recipe = new Recipe("Kaalilaatikko", "23 kiloa kaalia");
       
