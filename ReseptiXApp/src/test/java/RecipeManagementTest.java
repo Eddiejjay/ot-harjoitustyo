@@ -25,13 +25,8 @@ public class RecipeManagementTest {
     public RecipeManagementTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
+ 
+ 
     
     @Before
     public void setUp() {
@@ -39,12 +34,10 @@ public class RecipeManagementTest {
         recipeManagement = new RecipeManagement(recipeDao);
     }
     
-    @After
-    public void tearDown() {
-    }
+   
     
-      @Test
-    public void hello() {}
+    
+ 
     
     @Test
     public void createRecipeAddsRecipeToList(){
@@ -60,9 +53,9 @@ public class RecipeManagementTest {
     @Test 
         public void getRandomReturnsRecipe(){
              recipeManagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
-             Recipe recipe2 = new Recipe("Kaalilaatikko", "23 kiloa kaalia");
+             Recipe recipe = new Recipe("Kaalilaatikko", "23 kiloa kaalia");
       
-             Recipe recipe = recipeManagement.getRandom();
+             Recipe recipe2 = recipeManagement.getRandom();
           
               assertEquals(recipe.getName(), recipe2.getName());
             
