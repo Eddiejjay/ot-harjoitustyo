@@ -14,5 +14,5 @@
 | 19.11|   5h | listviewin linkittäminen valittuun näkymään (valitsemalla listviewistä reseptin käyttäjä pääsee yksittäisen reseptin näkymään) |
 | 23.11 |1,5h |reseptin arvonta toiminnallisuuden lisäys |
 | 23.11  |0,5h | checkstyle konfiguraatio |
-| 24.11|1 h|luokka/pakkauskaavio, Recipes-luokan testien teko|
+| 24.11|1,5h|luokka/pakkauskaavio, Recipes-luokan testien teko, Vaatimusmäärittely päivitys: tehtyjen toimintojen merkitseminen, uusien toimintojen tekojärjestykse suunnittelu|
 |  | | |
