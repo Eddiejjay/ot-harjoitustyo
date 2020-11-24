@@ -15,7 +15,7 @@
 | 23.11 |1,5h |reseptin arvonta toiminnallisuuden lisäys |
 | 23.11  |0,5h | checkstyle konfiguraatio |
 | 24.11|1,5h|luokka/pakkauskaavio, Recipes-luokan testien teko,tulevien viikkojen suunnittelu, Vaatimusmäärittely päivitys: tehtyjen toimintojen merkitseminen ja tulevien toimintojen listan järjestyksen päivitys|
+| 24.11 |2,5h |viikon 4 pushauksen viimeistely: checkstyle korjaukset, sovelluksen testaus etätyöpöydällä, README päivitys   |
 |  | | |
 |  | | |
-|  | | |
-| Yhteensä |29h | |
+| Yhteensä |31,5h | |
