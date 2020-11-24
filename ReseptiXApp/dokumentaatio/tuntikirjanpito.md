@@ -16,3 +16,6 @@
 | 23.11  |0,5h | checkstyle konfiguraatio |
 | 24.11|1,5h|luokka/pakkauskaavio, Recipes-luokan testien teko,tulevien viikkojen suunnittelu, Vaatimusmäärittely päivitys: tehtyjen toimintojen merkitseminen ja tulevien toimintojen listan järjestyksen päivitys|
 |  | | |
+|  | | |
+|  | | |
+| Yhteensä |29h | |
