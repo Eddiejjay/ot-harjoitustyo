@@ -20,17 +20,27 @@ Käyttäjän avatessa sovelluksen, se aukeaa Reseptit- näkymään. Aloitusnäky
 Käyttäjä pääsee siirtymään Uusi resepti- näkymään klikkaamalla nappia Lisää resepti.
 
 
+
 ## Perusversion tarjoama toiminnallisuus
 
-- käyttäjä näkee reseptinsä
+```diff 
++- käyttäjä voi lisätä uuden reseptin -tehty viikolla 3
 
-- käyttäjä voi lisätä  uuden reseptin 
++- käyttäjä näkee reseptiensä nimet listalla -tehty viikolla 3
+
++- käyttäjä voi valita reseptin listalta ja "valitse"- nappia painamalla siirtyy yksittäisen reseptin näkymään - tehty viikolla 4
+
++- käyttäjä voi halutessaan siiryä satunnaisen reseptin näkymään painamalla "satunnainen"- nappia - tehty viikolla 4
+```
 
 
 ## Jatkokehitysideoita 
 
 Sovelluksen perusversion valmistuttua, sovellukseen lisätään toiminnallisuuksia ajan salliessa seuraavasti.
  
+ - käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
+eri rekisteröityneet käyttäjät omilla resepteillään
+
 - viikko näkymä, jonka avulla käyttäjä voi suunnitella viikon ruokalistan 
   - reseptien arvonta päivälle 
   - reseption arvonta koko viikolle 
@@ -38,9 +48,6 @@ Sovelluksen perusversion valmistuttua, sovellukseen lisätään toiminnallisuuks
 - reseptin muokkaus 
 
 - kommentin lisääminen reseptiin 
-
-- käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
-eri rekisteröityneet käyttäjät omilla resepteillään
 
 - käyttäjätunnuksen poisto 
 
