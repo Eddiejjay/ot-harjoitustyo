@@ -16,6 +16,6 @@
 | 23.11  |0,5h | checkstyle konfiguraatio |
 | 24.11|1,5h|luokka/pakkauskaavio, Recipes-luokan testien teko,tulevien viikkojen suunnittelu, Vaatimusmäärittely päivitys: tehtyjen toimintojen merkitseminen ja tulevien toimintojen listan järjestyksen päivitys|
 | 24.11 |2,5h |viikon 4 pushauksen viimeistely: checkstyle korjaukset, sovelluksen testaus etätyöpöydällä, README päivitys   |
+| 27.11 |3,5h |GUI päivitys aloitus, tutustuminen Java FXLM + Scenebuilder, ensimmäisen näkymän luonti|
 |  | | |
-|  | | |
-| Yhteensä |31,5h | |
+| Yhteensä |35h | |
