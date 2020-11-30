@@ -38,6 +38,10 @@ public class RecipeManagement {
     }
    
  
+    public List<Recipe> getAll(){
+       return recipeDao.getAll();
+             
+    }
 
    
 }
