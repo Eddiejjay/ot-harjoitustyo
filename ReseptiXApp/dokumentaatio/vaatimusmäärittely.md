@@ -31,6 +31,10 @@ Käyttäjä pääsee siirtymään Uusi resepti- näkymään klikkaamalla nappia 
 +- käyttäjä voi valita reseptin listalta ja "valitse"- nappia painamalla siirtyy yksittäisen reseptin näkymään - tehty viikolla 4
 
 +- käyttäjä voi halutessaan siiryä satunnaisen reseptin näkymään painamalla "satunnainen"- nappia - tehty viikolla 4
+
++- käyttäjä voi luoda viikon menun tekemistään resepteistä - tehty viikolla 5
+
++- laaja käyttöliittymä päivitys Java FXML käyttäen - tehty viikolla 5 
 ```
 
 
