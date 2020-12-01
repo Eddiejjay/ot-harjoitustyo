@@ -10,6 +10,10 @@ Sovelluksen seuraava kehitysaskel tulee olemaan menu toiminnallisuuden viimeiste
  - ##### [Vaatimusmäärittely](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/vaatimusm%C3%A4%C3%A4rittely.md)
  - ##### [Työaikakirjanpito](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/tuntikirjanpito.md)
  - ##### [Arkkitehtuurikuvaus](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/arkkitehtuuri.md)
+ 
+ ## Releaset
+ [Viikko 5](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/ReseptiXapp)
+ 
 
 ### Komentorivikomennot 
 
