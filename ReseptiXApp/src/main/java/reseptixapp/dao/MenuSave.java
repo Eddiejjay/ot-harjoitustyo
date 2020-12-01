@@ -15,22 +15,23 @@ import reseptixapp.domain.Menu;
  * @author mazeero
  */
 public class MenuSave {
-    private Map<String,Menu> menus;
+    private Map<String, Menu> menus; 
     
     
     
-    public MenuSave(){
-        menus = new HashMap<>();    }
+    public MenuSave() {
+        menus = new HashMap<>();
+    }
    
+  
     
-    
-   public Menu createMenu(String name, Menu menu){
-       this.menus.put(name,menu);
-       return menu;
+    public Menu createMenu(String name, Menu menu) {
+        this.menus.put(name, menu);
+        return menu;
      
        
-   }
-  public Map<String,Menu> getMenus(){
-       return menus;
-   }
+    }
+    public Map<String, Menu> getMenus() {
+        return menus;
+    }
 }

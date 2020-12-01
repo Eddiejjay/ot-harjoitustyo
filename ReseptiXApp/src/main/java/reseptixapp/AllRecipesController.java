@@ -77,7 +77,7 @@ public class AllRecipesController implements Initializable {
         createListView();
  
         
-//        this.listView.setCellFactory(param -> new ListCell<Recipe>() {
+//        this.listView.setCellFactory(param -> new L <exclude>reseptixapp/ui/*</exclude>istCell<Recipe>() {
 //            
 //              @Override
 //           protected void updateItem(Recipe item, boolean empty) {

@@ -19,16 +19,10 @@ import reseptixapp.dao.MenuSave;
  */
 public class RecipeManagement {
     private RecipeSave recipeDao;
-//    private MenuSave menuDao;
+
     
-      public RecipeManagement(RecipeSave recipeDao) {
-       this.recipeDao = recipeDao;
-//    
-//    }
-//    public RecipeManagement(RecipeSave recipeDao, MenuSave menuDao){
-//        this.recipeDao = recipeDao;
-//        this.menuDao = menuDao;
-    
+    public RecipeManagement(RecipeSave recipeDao) {
+        this.recipeDao = recipeDao;
     }
     
     public Recipe createRecipe(String name, String instruction) {
@@ -46,27 +40,13 @@ public class RecipeManagement {
     }
    
  
-    public List<Recipe> getAll(){
-       return recipeDao.getAll();
+    public List<Recipe> getAll() {
+        return recipeDao.getAll();
              
     }
-    
-//    public Menu createMenu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri,Recipe sat, Recipe sun){
-//       Menu menu = new Menu(name, mon, tue, wed, thu, fri, sat, sun);
-//        return menuDao.createMenu(name,menu);
-//     
-//       
-//        
-//    }
-//
-//public Map<String,Menu> getAllMenus(){
-//    return menuDao.getMenus();
-//    
-//    
-//}
-
+   
         
-        }
+}
 
    
 
