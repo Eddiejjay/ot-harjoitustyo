@@ -16,7 +16,9 @@ import reseptixapp.AllRecipesController;
 import reseptixapp.CreateMenuSceneController;
 import reseptixapp.MenuSceneController;
 import reseptixapp.SingleRecipeSceneController;
+import reseptixapp.dao.MenuSave;
 import reseptixapp.dao.RecipeSave;
+import reseptixapp.domain.MenuManagement;
 import reseptixapp.domain.RecipeManagement;
 
 /**
@@ -25,7 +27,10 @@ import reseptixapp.domain.RecipeManagement;
  */
 public class FXMLUI extends Application{
     private RecipeSave recipeSave;
+    private MenuSave menuSave;
     private RecipeManagement recipeManagement;
+    private MenuManagement menuManagement;
+  
    
     private Scene AllRecipesScene;
     private Scene AddRecipeScene;
@@ -38,7 +43,12 @@ public class FXMLUI extends Application{
     @Override
     public void init() throws Exception {  
     recipeSave = new RecipeSave();
+    menuSave = new MenuSave();
+    
     recipeManagement = new RecipeManagement(recipeSave);
+    menuManagement = new MenuManagement(menuSave);
+    
+   
       
     FXMLLoader AllRecipesSceneLoader = new FXMLLoader(getClass().getResource("/fxml/AllRecipesScene.fxml"));
     Parent AllRecipesPane = AllRecipesSceneLoader.load();
@@ -76,6 +86,7 @@ public class FXMLUI extends Application{
     createMenuSceneController.setRecipeManagement(recipeManagement); 
     createMenuSceneController.setApplication(this);
     createMenuSceneController.setAllRecipesController(allRecipesSceneController);
+    createMenuSceneController.setMenuManagement(menuManagement); 
     
     
     FXMLLoader MenuSceneLoader = new FXMLLoader(getClass().getResource("/fxml/MenuScene.fxml"));
@@ -92,6 +103,11 @@ public class FXMLUI extends Application{
     addRecipesSceneController.setCreateMenuSceneController(createMenuSceneController);
 /////////////////
 recipeManagement.createRecipe("Kaalilaatikko", "5 kg kaalia!");
+recipeManagement.createRecipe("Pizza", "Soita 050223345335!");
+recipeManagement.createRecipe("Punajuurikeitto", "Punajuuria ja smetanaa");
+recipeManagement.createRecipe("Hapokas sienikastike ja riisiperunat", "srhoooooooms");
+recipeManagement.createRecipe("Keijon kalamunakas", "Keijo + onki");
+recipeManagement.createRecipe("Bögö", "Pihvi ja pihvi");
 createMenuSceneController.fillComboBox();
 allRecipesSceneController.updateListView();
 

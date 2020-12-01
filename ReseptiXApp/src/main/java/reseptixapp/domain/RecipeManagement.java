@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import reseptixapp.dao.MenuSave;
 
 /**
  *
@@ -18,9 +19,16 @@ import java.util.Random;
  */
 public class RecipeManagement {
     private RecipeSave recipeDao;
+//    private MenuSave menuDao;
     
-    public RecipeManagement(RecipeSave recipeDao) {
-        this.recipeDao = recipeDao;
+      public RecipeManagement(RecipeSave recipeDao) {
+       this.recipeDao = recipeDao;
+//    
+//    }
+//    public RecipeManagement(RecipeSave recipeDao, MenuSave menuDao){
+//        this.recipeDao = recipeDao;
+//        this.menuDao = menuDao;
+    
     }
     
     public Recipe createRecipe(String name, String instruction) {
@@ -42,9 +50,25 @@ public class RecipeManagement {
        return recipeDao.getAll();
              
     }
+    
+//    public Menu createMenu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri,Recipe sat, Recipe sun){
+//       Menu menu = new Menu(name, mon, tue, wed, thu, fri, sat, sun);
+//        return menuDao.createMenu(name,menu);
+//     
+//       
+//        
+//    }
+//
+//public Map<String,Menu> getAllMenus(){
+//    return menuDao.getMenus();
+//    
+//    
+//}
+
+        
+        }
 
    
-}
 
 
 
