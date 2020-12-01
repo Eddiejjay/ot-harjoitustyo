@@ -45,4 +45,9 @@ public class Recipe {
     public String getName() {
         return this.name;
     }
+    
+    @Override
+public String toString() {
+    return this.getName();
+}
 }

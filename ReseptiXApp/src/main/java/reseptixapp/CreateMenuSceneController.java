@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -22,15 +23,14 @@ import reseptixapp.ui.FXMLUI;
  *
  * @author mazeero
  */
-public class AddRecipeSceneController implements Initializable {
+public class CreateMenuSceneController implements Initializable {
     private RecipeManagement recipeManagement;
     private FXMLUI application;
     private AllRecipesController allRecipesController;
-    private CreateMenuSceneController createMenuSceneController;
     
-    public Button add;
-    public TextField newRecipeName;
-    public TextArea newRecipeInstruction;
+    public ComboBox<Recipe> comboBox;
+    public Button back;
+  
  
 
     
@@ -44,33 +44,41 @@ public class AddRecipeSceneController implements Initializable {
     public void setAllRecipesController(AllRecipesController allRecipesController){
         this.allRecipesController = allRecipesController;
     }
-    public void setCreateMenuSceneController(CreateMenuSceneController createMenuSceneController){
-        this.createMenuSceneController = createMenuSceneController;
-    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        newRecipeInstruction.setPromptText("Ingredients and instructions here...");
-    }    
-    
-    
-    
-    public void addButtonClicked(){
-       String name = newRecipeName.getText();
-       String instruction = newRecipeInstruction.getText();
-       recipeManagement.createRecipe(name, instruction);
-       allRecipesController.updateListView();
-    
       
-       
-       newRecipeName.setText("");
-       newRecipeInstruction.setText("");
-       newRecipeInstruction.setPromptText("Ingredients and instructions here...");
-       createMenuSceneController.fillComboBox();
-       application.setAllRecipesScene();
+     
+    }    
+  
+       public void backButtonClicked(){
+        application.setAllRecipesScene();
+   
+    
+       }
+    
+public void fillComboBox(){
+    comboBox.setItems(allRecipesController.createOlist());
+    
+//    this.comboBox.setCellFactory(param -> new ListCell<Recipe>() {
+//            
+//              @Override
+//           protected void updateItem(Recipe item, boolean empty) {
+//               super.updateItem(item, empty);
+//
+//               if (empty || item == null || item.getName() == null) {
+//                   setText(null);
+//              } else {
+//                   setText(item.getName());
+//               }       
+//               
+//   }});
+    
+    
+    
+}
+  
          
-    }
-    
-    
     
  
 }

@@ -17,5 +17,6 @@
       <Button fx:id="addRecipe" layoutX="462.0" layoutY="337.0" mnemonicParsing="false" onAction="#addRecipeClicked" prefHeight="51.0" prefWidth="81.0" text="Add recipe" />
       <Button fx:id="surpriseButton" layoutX="389.0" layoutY="57.0" mnemonicParsing="false" onAction="#surpriseButtonClicked" prefHeight="25.0" prefWidth="100.0" text="Surprise me" />
       <Button fx:id="test" layoutX="22.0" layoutY="350.0" mnemonicParsing="false" onAction="#testButtonClicked" text="testButton" />
+      <Button fx:id="makeAmenuButton" layoutX="325.0" layoutY="337.0" mnemonicParsing="false" onAction="#makeAmenuButtonClicked" prefHeight="51.0" prefWidth="129.0" text="Make a menu" />
    </children>
 </AnchorPane>

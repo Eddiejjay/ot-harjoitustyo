@@ -13,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import reseptixapp.AddRecipeSceneController;
 import reseptixapp.AllRecipesController;
+import reseptixapp.CreateMenuSceneController;
+import reseptixapp.MenuSceneController;
 import reseptixapp.SingleRecipeSceneController;
 import reseptixapp.dao.RecipeSave;
 import reseptixapp.domain.RecipeManagement;
@@ -28,6 +30,8 @@ public class FXMLUI extends Application{
     private Scene AllRecipesScene;
     private Scene AddRecipeScene;
     private Scene SingleRecipeScene;
+    private Scene CreateMenuScene;
+    private Scene MenuScene;
     private Stage stage;
     
     
@@ -52,6 +56,9 @@ public class FXMLUI extends Application{
     addRecipesSceneController.setApplication(this);
     addRecipesSceneController.setAllRecipesController(allRecipesSceneController);
     
+       
+
+    
  
     FXMLLoader SingleRecipeSceneLoader = new FXMLLoader(getClass().getResource("/fxml/SingleRecipeScene.fxml"));
     Parent SingleRecipePane = SingleRecipeSceneLoader.load();
@@ -60,10 +67,33 @@ public class FXMLUI extends Application{
     singleRecipesSceneController.setRecipeManagement(recipeManagement); 
     singleRecipesSceneController.setApplication(this);
     singleRecipesSceneController.setAllRecipesController(allRecipesSceneController);
+    
+    
+    FXMLLoader CreateMenuSceneLoader = new FXMLLoader(getClass().getResource("/fxml/CreateMenuScene.fxml"));
+    Parent CreateMenuPane = CreateMenuSceneLoader.load();
+    CreateMenuScene = new Scene(CreateMenuPane, 600, 400);
+    CreateMenuSceneController createMenuSceneController = CreateMenuSceneLoader.getController();
+    createMenuSceneController.setRecipeManagement(recipeManagement); 
+    createMenuSceneController.setApplication(this);
+    createMenuSceneController.setAllRecipesController(allRecipesSceneController);
+    
+    
+    FXMLLoader MenuSceneLoader = new FXMLLoader(getClass().getResource("/fxml/MenuScene.fxml"));
+    Parent MenuPane = MenuSceneLoader.load();
+    MenuScene = new Scene(MenuPane, 600, 400);
+    MenuSceneController menuSceneController = MenuSceneLoader.getController();
+    menuSceneController.setRecipeManagement(recipeManagement); 
+    menuSceneController.setApplication(this);
+    menuSceneController.setAllRecipesController(allRecipesSceneController);
 
     
-    
+    // 
     allRecipesSceneController.setSingleRecipeSceneController(singleRecipesSceneController);
+    addRecipesSceneController.setCreateMenuSceneController(createMenuSceneController);
+/////////////////
+recipeManagement.createRecipe("Kaalilaatikko", "5 kg kaalia!");
+createMenuSceneController.fillComboBox();
+allRecipesSceneController.updateListView();
 
     
     }
@@ -102,6 +132,14 @@ public void  setAllRecipesScene(){
 public void setSingleRecipeScene(){
     this.stage.setScene(SingleRecipeScene);
 }
+
+public void setCreateMenuScene(){
+    this.stage.setScene(CreateMenuScene);
+}
+
+
+     
+    
 
 }
 

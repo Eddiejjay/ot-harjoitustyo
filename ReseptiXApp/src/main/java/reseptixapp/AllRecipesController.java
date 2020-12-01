@@ -26,10 +26,12 @@ public class AllRecipesController implements Initializable {
     private RecipeManagement recipeManagement;
     private FXMLUI application;
     private SingleRecipeSceneController singleRecipeSceneController;
+    
     public Button test;
     public Button addRecipe;
     public Button letsCookButton;
     public Button surpriseButton;
+    public Button makeAmenuButton;
     public ListView<Recipe> listView;
     
  
@@ -75,18 +77,18 @@ public class AllRecipesController implements Initializable {
         createListView();
  
         
-        this.listView.setCellFactory(param -> new ListCell<Recipe>() {
-            
-              @Override
-           protected void updateItem(Recipe item, boolean empty) {
-               super.updateItem(item, empty);
-
-               if (empty || item == null || item.getName() == null) {
-                   setText(null);
-              } else {
-                   setText(item.getName());
-               }        
-   }});
+//        this.listView.setCellFactory(param -> new ListCell<Recipe>() {
+//            
+//              @Override
+//           protected void updateItem(Recipe item, boolean empty) {
+//               super.updateItem(item, empty);
+//
+//               if (empty || item == null || item.getName() == null) {
+//                   setText(null);
+//              } else {
+//                   setText(item.getName());
+//               }        
+//   }});
         
     }
     public void letsCookButtonClicked(){  
@@ -125,6 +127,10 @@ public class AllRecipesController implements Initializable {
             
     }
     
+      public void makeAmenuButtonClicked(){
+          application.setCreateMenuScene();
+          
+      }
    
     
           

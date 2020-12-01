@@ -22,18 +22,12 @@ import reseptixapp.ui.FXMLUI;
  *
  * @author mazeero
  */
-public class AddRecipeSceneController implements Initializable {
+public class MenuSceneController implements Initializable {
     private RecipeManagement recipeManagement;
     private FXMLUI application;
     private AllRecipesController allRecipesController;
-    private CreateMenuSceneController createMenuSceneController;
     
-    public Button add;
-    public TextField newRecipeName;
-    public TextArea newRecipeInstruction;
- 
 
-    
     
     public void setRecipeManagement(RecipeManagement recipeManagement) {
         this.recipeManagement = recipeManagement;
@@ -44,34 +38,13 @@ public class AddRecipeSceneController implements Initializable {
     public void setAllRecipesController(AllRecipesController allRecipesController){
         this.allRecipesController = allRecipesController;
     }
-    public void setCreateMenuSceneController(CreateMenuSceneController createMenuSceneController){
-        this.createMenuSceneController = createMenuSceneController;
-    }
+    
+
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        newRecipeInstruction.setPromptText("Ingredients and instructions here...");
-    }    
+     
+    }    }
     
     
-    
-    public void addButtonClicked(){
-       String name = newRecipeName.getText();
-       String instruction = newRecipeInstruction.getText();
-       recipeManagement.createRecipe(name, instruction);
-       allRecipesController.updateListView();
-    
-      
-       
-       newRecipeName.setText("");
-       newRecipeInstruction.setText("");
-       newRecipeInstruction.setPromptText("Ingredients and instructions here...");
-       createMenuSceneController.fillComboBox();
-       application.setAllRecipesScene();
-         
-    }
-    
-    
-    
- 
-}
-  
