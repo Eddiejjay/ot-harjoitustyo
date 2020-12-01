@@ -1,9 +1,9 @@
  # [ReseptiX App](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/ReseptiXApp)
 -  Sovelluksen ensimmäisessä versiossa käyttäjä voi lisätä reseptejään sovellukseen. 
 -  Sovelluksen toisessa versiossa sovellukseen on lisätty toiminnallisuus yksittäisten reseptien tarkasteluun sekä reseptin arpomiseen. (tarkemmat tiedon vaatimusmäärittelyssä) 
+-  Sovelluksen kolmannessa versiossa graafinen käyttöliittymä uusittiin täysin Java FXML käyttäen sekä lisättiin toiminnallisuus viikon menun luomiseen
 
-Sovelluksen seuraava kehitysaskel tulee olemaan graafisen käyttöliittymän päivitys sekä kirjautuminen sovellukseen käyttäjätunnuksella. 
-Sovellukseen on myös suunnitteilla seuraavaa: datan tallennus tietokantaan, viikkokohtaisen ruokalistan tekeminen valitsemalla tai arpomalla. 
+Sovelluksen seuraava kehitysaskel tulee olemaan menu toiminnallisuuden viimeistely mm. menun tarkastelu sekä mahdollisuus arpoa reseptejä eri päiville.  Jos aikaa riittää sovellukseen ideoidaan lisää mielekästä käyttäjäystävällistä toiminnallisuutta. Sovellukseen on myös suunnitteilla datan tallennus tietokantaan.
 
 
  ## Dokumentaatio
@@ -23,4 +23,17 @@ mvn test jacoco:report
 
 ##### Checkstyle-raportti
 mvn jxr:jxr checkstyle:checkstyle
+
+#### Jar-tiedoston luominen
+mvn package
+
+#### Jar- tiedoston ajaminen
+Ohjelman targer kansiosta komento: 
+
+java -jar ReseptiXApp-1.0-SNAPSHOT.jar 
+
+
+
+
+
 
