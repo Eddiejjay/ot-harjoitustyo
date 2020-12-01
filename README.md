@@ -27,7 +27,11 @@ mvn jxr:jxr checkstyle:checkstyle
 #### Jar-tiedoston luominen
 mvn package
 
-#### Jar- tiedoston ajaminen
+#### Jar- tiedoston ajaminen 
+GitHub releasena ladattu: 
+
+java -jar ReseptiXApp.jar 
+
 Ohjelman targer kansiosta komento: 
 
 java -jar ReseptiXApp-1.0-SNAPSHOT.jar 
