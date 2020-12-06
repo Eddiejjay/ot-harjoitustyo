@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author mazeero
  */
 public class Recipe {
-    private int id; 
     private String name;
     private String instruction;
     
@@ -20,13 +19,6 @@ public class Recipe {
       
         this.instruction = instruction;
         this.name = name;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public int getId() {
-        return this.id;
     }
     
     public void setInstruction(String instruction) {
@@ -45,7 +37,8 @@ public class Recipe {
     public String getName() {
         return this.name;
     }
-    
+
+
     @Override
 public String toString() {
         return this.getName();

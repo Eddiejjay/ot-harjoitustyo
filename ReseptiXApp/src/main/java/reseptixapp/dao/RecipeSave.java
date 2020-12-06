@@ -31,7 +31,7 @@ public class RecipeSave {
     }
     
     public Recipe create(Recipe recipe) {
-        recipe.setId(generateId());
+    
         recipes.add(recipe);
         return recipe;  
     }  

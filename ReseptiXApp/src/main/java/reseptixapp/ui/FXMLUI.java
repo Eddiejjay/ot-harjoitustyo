@@ -16,6 +16,7 @@ import reseptixapp.AllRecipesController;
 import reseptixapp.CreateMenuSceneController;
 import reseptixapp.MenuSceneController;
 import reseptixapp.SingleRecipeSceneController;
+import reseptixapp.dao.DatabaseRecipeDao;
 import reseptixapp.dao.MenuSave;
 import reseptixapp.dao.RecipeSave;
 import reseptixapp.domain.MenuManagement;
@@ -26,6 +27,8 @@ import reseptixapp.domain.RecipeManagement;
  * @author mazeero
  */
 public class FXMLUI extends Application{
+    
+    private DatabaseRecipeDao database;
     private RecipeSave recipeSave;
     private MenuSave menuSave;
     private RecipeManagement recipeManagement;
@@ -42,12 +45,19 @@ public class FXMLUI extends Application{
     
     @Override
     public void init() throws Exception {  
+        
+        
+    database = new DatabaseRecipeDao();
+    database.connect();
+    database.getAllRecipes();
+    database.getRecipeByName("testi");
     recipeSave = new RecipeSave();
     menuSave = new MenuSave();
     
-    recipeManagement = new RecipeManagement(recipeSave);
+    recipeManagement = new RecipeManagement(recipeSave , database);
     menuManagement = new MenuManagement(menuSave);
     
+ 
    
       
     FXMLLoader AllRecipesSceneLoader = new FXMLLoader(getClass().getResource("/fxml/AllRecipesScene.fxml"));
@@ -108,6 +118,7 @@ recipeManagement.createRecipe("Punajuurikeitto", "Punajuuria ja smetanaa");
 recipeManagement.createRecipe("Hapokas sienikastike ja riisiperunat", "srhoooooooms");
 recipeManagement.createRecipe("Keijon kalamunakas", "Keijo + onki");
 recipeManagement.createRecipe("Bögö", "Pihvi ja pihvi");
+
 createMenuSceneController.fillComboBox();
 allRecipesSceneController.updateListView();
 
