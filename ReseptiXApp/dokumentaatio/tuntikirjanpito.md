@@ -21,4 +21,11 @@
 |  29.11|4h | GUI päivitys|
 |30.11  | 5h| GUI päivitys + Menu toiminnallisuus aloitus|
 | 1.12 |7,5h |Menu toiminnallisuus, uusien testien teko, viikon 5 palautus viimeistelyt |
-| Yhteensä |55,5h | |
+|4.12|2h|Sqlite tietokannanhallintajärjestelmään tutustuminen |
+|5.12 |2h|tietokannan lisääminen sovellukseen |
+|6.7 |2h|tietokannan lisääminen sovellukseen |
+| || |
+| || |
+| || |
+
+| Yhteensä |61,5h | |
