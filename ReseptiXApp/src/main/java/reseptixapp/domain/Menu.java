@@ -36,4 +36,41 @@ public class Menu {
     
     
     }
+    
+    
+     public String getName() {
+        return this.name;
+    }
+        @Override
+public String toString() {
+        return this.getName();
+    }
+
+public Recipe getMondayRecipe(){
+    return this.mon;
+    
+}
+public Recipe getTuesdayRecipe(){
+    return this.tue;
+}
+public Recipe getWednesdayRecipe(){
+    return this.wed;
+
+}
+public Recipe getThursdayRecipe(){
+    return this.thu;
+
+}
+public Recipe getFridayRecipe(){
+    return this.fri;
+
+}
+public Recipe getSaturdayRecipe(){
+    return this.sat;
+
+}
+public Recipe getSundayRecipe(){
+    return this.sun;
+
+}
 }

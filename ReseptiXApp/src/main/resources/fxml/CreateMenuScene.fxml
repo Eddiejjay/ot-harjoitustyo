@@ -106,7 +106,6 @@
                   <Button fx:id="backButton" alignment="TOP_LEFT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#backButtonClicked" text="Back" />
                   <Button fx:id="createMenuButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createMenuButtonClicked" prefHeight="45.0" prefWidth="329.0" text="Create menu" />
                </children></HBox>
-            <TextField />
          </children>
       </VBox>
    </children>

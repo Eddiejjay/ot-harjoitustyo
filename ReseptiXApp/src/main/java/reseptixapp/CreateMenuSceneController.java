@@ -8,6 +8,7 @@ package reseptixapp;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -76,13 +77,14 @@ public class CreateMenuSceneController implements Initializable {
        }
     
 public void fillComboBox(){
-    cbMonday.setItems(allRecipesController.createOlist());
-    cbTuesday.setItems(allRecipesController.createOlist());
-    cbWednesday.setItems(allRecipesController.createOlist());
-    cbThursday.setItems(allRecipesController.createOlist());
-    cbFriday.setItems(allRecipesController.createOlist());
-    cbSaturday.setItems(allRecipesController.createOlist());
-    cbSunday.setItems(allRecipesController.createOlist());
+    ObservableList<Recipe> list = allRecipesController.createRecipesOlist();
+    cbMonday.setItems(list);
+    cbTuesday.setItems(list);
+    cbWednesday.setItems(list);
+    cbThursday.setItems(list);
+    cbFriday.setItems(list);
+    cbSaturday.setItems(list);
+    cbSunday.setItems(list);
    
     
     
@@ -91,16 +93,21 @@ public void fillComboBox(){
 public void createMenuButtonClicked(){
     
     Recipe recipeMonday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeTuesday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeWednesday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeThursday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeFriday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeSaturday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeSunday = cbMonday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeTuesday = cbTuesday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeWednesday = cbWednesday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeThursday = cbThursday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeFriday = cbFriday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeSaturday = cbSaturday.getSelectionModel().getSelectedItem(); 
+    Recipe recipeSunday = cbSunday.getSelectionModel().getSelectedItem(); 
     
     menuManagement.createMenu(menuName.getText(),recipeMonday, recipeTuesday, recipeWednesday, recipeThursday, recipeFriday, recipeSaturday, recipeSunday);  
+    
+    
     System.out.println("Testi");
     System.out.println(menuManagement.getAllMenus());
+    
+   allRecipesController.updatePickMenu();
+    
     application.setAllRecipesScene();
             
 }

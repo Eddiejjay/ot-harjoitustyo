@@ -58,7 +58,7 @@ public class AddRecipeSceneController implements Initializable {
        String name = newRecipeName.getText();
        String instruction = newRecipeInstruction.getText();
        recipeManagement.createRecipe(name, instruction);
-       allRecipesController.updateListView();
+       allRecipesController.updateRecipesListView();
     
       
        

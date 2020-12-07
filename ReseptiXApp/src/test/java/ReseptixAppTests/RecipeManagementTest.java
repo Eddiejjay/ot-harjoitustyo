@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import reseptixapp.dao.DatabaseRecipeDao;
 
 /**
  *
@@ -23,6 +24,7 @@ import static org.junit.Assert.*;
 public class RecipeManagementTest {
        private RecipeSave recipeDao;
        private  RecipeManagement recipeManagement;
+       DatabaseRecipeDao database;
     
     public RecipeManagementTest() {
         
@@ -31,7 +33,8 @@ public class RecipeManagementTest {
     @Before
     public void setUp() {
         recipeDao = new RecipeSave();
-        recipeManagement = new RecipeManagement(recipeDao);
+        database = new DatabaseRecipeDao();
+        recipeManagement = new RecipeManagement(recipeDao, database);
     }
     
     
@@ -42,7 +45,7 @@ public class RecipeManagementTest {
         
         recipeManagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
         recipeManagement.createRecipe("pullaa", "23 kiloa kaalia");
-        int vastaus = recipeDao.getAll().size();
+        int vastaus = database.getAllRecipes().size();
         assertEquals(2, vastaus);
     }
    

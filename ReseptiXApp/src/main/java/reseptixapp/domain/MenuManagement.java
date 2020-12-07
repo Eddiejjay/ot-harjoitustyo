@@ -5,6 +5,7 @@
  */
 package reseptixapp.domain;
 
+import java.util.HashMap;
 import java.util.Map;
 import reseptixapp.dao.MenuSave;
 
@@ -30,11 +31,13 @@ public class MenuManagement {
         
     }
 
-    public Map<String, Menu> getAllMenus() {
+    public HashMap<String, Menu> getAllMenus() {
         return menuDao.getMenus();
     
     
     }
+    public Menu getMenubyName(String name){
+    return menuDao.getMenuByName(name);
 
     
-}
+}}

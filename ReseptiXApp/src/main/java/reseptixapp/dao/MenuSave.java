@@ -15,7 +15,7 @@ import reseptixapp.domain.Menu;
  * @author mazeero
  */
 public class MenuSave {
-    private Map<String, Menu> menus; 
+    private HashMap<String, Menu> menus; 
     
     
     
@@ -31,7 +31,13 @@ public class MenuSave {
      
        
     }
-    public Map<String, Menu> getMenus() {
+    public HashMap<String, Menu> getMenus() {
         return menus;
+    }
+    
+    public Menu getMenuByName(String name){
+        
+        return menus.get(name);
+// 
     }
 }
