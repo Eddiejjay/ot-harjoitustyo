@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package reseptixapp;
+package reseptixapp.ui;
 
+import reseptixapp.ui.AllRecipesController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
