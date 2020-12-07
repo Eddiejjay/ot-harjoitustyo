@@ -25,7 +25,7 @@
 |5.12 |2h|tietokannan lisääminen sovellukseen |
 |6.7 |2h|tietokannan lisääminen sovellukseen |
 |7.6 |5h|menu toiminnallisuuden päivitys, tietokannan säätö|
-| || |
+|7.6|1h|arkkitehtuurikuvaus  |
 | || |
 
-| Yhteensä |66,5h | |
+| Yhteensä |67,5h | |
