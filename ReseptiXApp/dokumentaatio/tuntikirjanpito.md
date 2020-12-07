@@ -24,8 +24,8 @@
 |4.12|2h|Sqlite tietokannanhallintajärjestelmään tutustuminen |
 |5.12 |2h|tietokannan lisääminen sovellukseen |
 |6.7 |2h|tietokannan lisääminen sovellukseen |
-| || |
+|7.6 |5h|menu toiminnallisuuden päivitys, tietokannan säätö|
 | || |
 | || |
 
-| Yhteensä |61,5h | |
+| Yhteensä |66,5h | |
