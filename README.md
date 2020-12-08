@@ -15,7 +15,7 @@ Sovelluksen seuraava kehitysaskel tulee olemaan menu toiminnallisuuden viimeiste
  - ##### [Arkkitehtuurikuvaus](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/arkkitehtuuri.md)
  
  ## Releaset
- [Viikko 5](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/ReseptiXapp)
+ [Viikko 6](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/jee)
  
 
 ### Komentorivikomennot 
