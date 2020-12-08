@@ -35,6 +35,11 @@ Käyttäjä pääsee siirtymään Uusi resepti- näkymään klikkaamalla nappia 
 +- käyttäjä voi luoda viikon menun tekemistään resepteistä - tehty viikolla 5
 
 +- laaja käyttöliittymä päivitys Java FXML käyttäen - tehty viikolla 5 
+
++- menu toiminnallisuutta päivitetty siten että käyttäjä pääsee valitsemaan menun listalta ja katselemaan haluamaansa menuta - tehty viikolla 6
+
++- sovellukseen on lisätty tietokanta - tehty viikolla 6
+
 ```
 
 
