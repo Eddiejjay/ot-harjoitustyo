@@ -23,9 +23,15 @@
 | 1.12 |7,5h |Menu toiminnallisuus, uusien testien teko, viikon 5 palautus viimeistelyt |
 |4.12|2h|Sqlite tietokannanhallintajärjestelmään tutustuminen |
 |5.12 |2h|tietokannan lisääminen sovellukseen |
-|6.7 |2h|tietokannan lisääminen sovellukseen |
-|7.6 |5h|menu toiminnallisuuden päivitys, tietokannan säätö|
-|7.6|1h|arkkitehtuurikuvaus  |
-| || |
+|6.12 |2h|tietokannan lisääminen sovellukseen |
+|7.12 |5h|menu toiminnallisuuden päivitys, tietokannan säätö|
+|7.12|1h|arkkitehtuurikuvaus  |
+|8.12 |5h |tietokannan säätäminen |
+|8.12 |1h |käyttöohjeen alustus|
+| | ||
+| | ||
+| | ||
+| | ||
+| | ||
 
-| Yhteensä |67,5h | |
+| Yhteensä |73,5h | |
