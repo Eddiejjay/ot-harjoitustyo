@@ -11,8 +11,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import reseptixapp.dao.MenuSave;
-import reseptixapp.dao.RecipeSave;
+import reseptixapp.dao.DatabaseMenuDao;
+import reseptixapp.dao.DatabaseRecipeDao;
+
 import reseptixapp.domain.Menu;
 import reseptixapp.domain.MenuManagement;
 import reseptixapp.domain.Recipe;
@@ -23,8 +24,11 @@ import reseptixapp.domain.RecipeManagement;
  * @author mazeero
  */
 public class MenuManagementTest {
-     private MenuSave menuDao;
+       private DatabaseMenuDao menuDao;
        private MenuManagement menuManagement;
+       private DatabaseRecipeDao database;
+       private RecipeManagement recipeManagement;
+       
     
     public MenuManagementTest() {
     }
@@ -34,20 +38,27 @@ public class MenuManagementTest {
  
     @Before
     public void setUp() {
-        menuDao = new MenuSave();
+  
+        menuDao = new DatabaseMenuDao("junitTest.db");
+        database = new DatabaseRecipeDao("junitTest.db");
+        menuDao.deleteMenusFromDatabase();
+        database.deleteRecipesFromDatabase();
+        recipeManagement= new RecipeManagement(database);
         menuManagement = new MenuManagement(menuDao);
+        
     }
 
 @Test
 
 public void createMenuCreatesMenu(){
-   Recipe recipe1 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe2 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe3 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe4 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe5 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe6 = new Recipe("Kaalilaatikko","14kg kaalia");
-   Recipe recipe7 = new Recipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe1 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe2 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe3 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe4 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe5 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe6 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+    Recipe recipe7 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
+     
   
    menuManagement.createMenu("Jorman KaaliMenu", recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7);
    

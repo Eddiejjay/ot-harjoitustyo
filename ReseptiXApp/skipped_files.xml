@@ -6,11 +6,11 @@
 
 <suppressions>
     <suppress files="reseptixapp.ui.ReseptiXUi.java" checks="[a-zA-Z0-9]*"/>
- <suppress files="reseptixapp.AddRecipeSceneController.java" checks="[a-zA-Z0-9]*"/>
- <suppress files="reseptixapp.AllRecipesController.java" checks="[a-zA-Z0-9]*"/>
- <suppress files="reseptixapp.MenuSceneController.java" checks="[a-zA-Z0-9]*"/>
- <suppress files="reseptixapp.SingleRecipeSceneController.java" checks="[a-zA-Z0-9]*"/>
- <suppress files="reseptixapp.CreateMenuSceneController.java" checks="[a-zA-Z0-9]*"/>
+ <suppress files="reseptixapp.ui.AddRecipeSceneController.java" checks="[a-zA-Z0-9]*"/>
+ <suppress files="reseptixapp.ui.AllRecipesController.java" checks="[a-zA-Z0-9]*"/>
+ <suppress files="reseptixapp.ui.MenuSceneController.java" checks="[a-zA-Z0-9]*"/>
+ <suppress files="reseptixapp.ui.SingleRecipeSceneController.java" checks="[a-zA-Z0-9]*"/>
+ <suppress files="reseptixapp.ui.CreateMenuSceneController.java" checks="[a-zA-Z0-9]*"/>
  <suppress files="reseptixapp.ui.FXMLUI.java" checks="[a-zA-Z0-9]*"/>
 
 

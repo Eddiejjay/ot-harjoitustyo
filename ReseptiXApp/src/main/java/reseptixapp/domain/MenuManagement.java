@@ -7,37 +7,51 @@ package reseptixapp.domain;
 
 import java.util.HashMap;
 import java.util.Map;
-import reseptixapp.dao.MenuSave;
+import reseptixapp.dao.DatabaseMenuDao;
+
 
 /**
  *
  * @author mazeero
  */
 public class MenuManagement {
-    private MenuSave menuDao;
-       
-    public MenuManagement(MenuSave menuDao) {
-        this.menuDao = menuDao;
-           
+    private DatabaseMenuDao database;
+      
+    public MenuManagement(DatabaseMenuDao database) {
+        this.database = database;
+         
            
     }
     
     
     public Menu createMenu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri, Recipe sat, Recipe sun) {
         Menu menu = new Menu(name, mon, tue, wed, thu, fri, sat, sun);
-        return menuDao.createMenu(name, menu);
+      
+        String mondayId = menu.getMondayRecipe().getName();
+        String tuesdayId = menu.getTuesdayRecipe().getName();
+        String wednesdayId = menu.getWednesdayRecipe().getName();
+        String thursdayId = menu.getThursdayRecipe().getName();
+        String fridayId = menu.getFridayRecipe().getName();
+        String saturdayId = menu.getSaturdayRecipe().getName();
+        String sundayId = menu.getSundayRecipe().getName();
+        
+        
+        database.addMenuToDatabase(menu.getName(), mondayId, tuesdayId, wednesdayId, thursdayId, fridayId, saturdayId, sundayId);
+        return menu;
      
        
         
     }
 
+  
     public HashMap<String, Menu> getAllMenus() {
-        return menuDao.getMenus();
+        return database.getAllMenus();
     
     
     }
-    public Menu getMenubyName(String name){
-    return menuDao.getMenuByName(name);
+    public Menu getMenubyName(String name) {
+        return database.getMenuByName(name);
 
     
-}}
+    } 
+}

@@ -11,9 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import reseptixapp.dao.DatabaseMenuDao;
 import reseptixapp.dao.DatabaseRecipeDao;
-import reseptixapp.dao.MenuSave;
-import reseptixapp.dao.RecipeSave;
 import reseptixapp.domain.MenuManagement;
 import reseptixapp.domain.RecipeManagement;
 
@@ -25,8 +24,7 @@ import reseptixapp.domain.RecipeManagement;
 public class FXMLUI extends Application{
     
     private DatabaseRecipeDao database;
-    private RecipeSave recipeSave;
-    private MenuSave menuSave;
+    private DatabaseMenuDao database1;
     private RecipeManagement recipeManagement;
     private MenuManagement menuManagement;
   
@@ -43,15 +41,16 @@ public class FXMLUI extends Application{
     public void init() throws Exception {  
         
         
-    database = new DatabaseRecipeDao();
+    database = new DatabaseRecipeDao("testi.db");
+    database1 = new DatabaseMenuDao("testi.db");
     database.connect();
+    database1.connect();
     database.getAllRecipes();
     database.getRecipeByName("testi");
-    recipeSave = new RecipeSave();
-    menuSave = new MenuSave();
+  
     
-    recipeManagement = new RecipeManagement(recipeSave , database);
-    menuManagement = new MenuManagement(menuSave);
+    recipeManagement = new RecipeManagement(database);
+    menuManagement = new MenuManagement(database1);
     
  
    
@@ -111,7 +110,7 @@ public class FXMLUI extends Application{
     allRecipesSceneController.setSingleRecipeSceneController(singleRecipeSceneController);
     addRecipesSceneController.setCreateMenuSceneController(createMenuSceneController);
     allRecipesSceneController.setMenuSceneController(menuSceneController);
-/////////////////
+
 //recipeManagement.createRecipe("Kaalilaatikko", "5 kg kaalia!");
 //recipeManagement.createRecipe("Pizza", "Soita 050223345335!");
 //recipeManagement.createRecipe("Punajuurikeitto", "Punajuuria ja smetanaa");
@@ -119,8 +118,9 @@ public class FXMLUI extends Application{
 //recipeManagement.createRecipe("Keijon kalamunakas", "Keijo + onki");
 //recipeManagement.createRecipe("Bögö", "Pihvi ja pihvi");
 
-createMenuSceneController.fillComboBox();
-allRecipesSceneController.updateRecipesListView();
+    createMenuSceneController.fillComboBox();
+    allRecipesSceneController.updateRecipesListView();
+    allRecipesSceneController.updatePickMenu();
 
     
     }
@@ -134,14 +134,10 @@ public static void main(String[] args) {
 
     @Override
     public void start(Stage stage) throws Exception {
-        this.stage = stage;
-      
-
-    
-        stage.setTitle("RespetiX");
-        setAllRecipesScene();
-//        setSingleRecipeScene();
-        stage.show();
+    this.stage = stage;
+    stage.setTitle("RespetiX");
+    setAllRecipesScene();
+    stage.show();
        
     }
 

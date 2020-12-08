@@ -5,35 +5,34 @@
  */
 package reseptixapp.domain;
 
-import reseptixapp.dao.RecipeSave;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import reseptixapp.dao.DatabaseRecipeDao;
-import reseptixapp.dao.MenuSave;
+
 
 /**
  *
  * @author mazeero
  */
 public class RecipeManagement {
-    private RecipeSave recipeDao;
-      public DatabaseRecipeDao database;
+
+    public DatabaseRecipeDao database;
 
     
-    public RecipeManagement(RecipeSave recipeDao, DatabaseRecipeDao database) {
-        this.recipeDao = recipeDao;
+    public RecipeManagement(DatabaseRecipeDao database) {
+
         this.database = database;
     }
     
-    public Recipe createRecipe(String name, String instruction) {
+    public  Recipe createRecipe(String name, String instruction) {
         Recipe recipe = new Recipe(name, instruction); 
-        database.addRecipeToDatabase(name,instruction);
+        database.addRecipeToDatabase(name, instruction);
         // tarkastele tämä vielä miten toimi  alla 
-        return this.recipeDao.create(recipe);
-  
+        return recipe;
     }
    
    

@@ -49,51 +49,50 @@ public class AllRecipesController implements Initializable {
     
     
     
-    public void setRecipeManagement(RecipeManagement recipeManagement) {
-        this.recipeManagement = recipeManagement;
+public void setRecipeManagement(RecipeManagement recipeManagement) {
+    this.recipeManagement = recipeManagement;
     }
     
-     public void setMenuManagement(MenuManagement menuManagement) {
-        this.menuManagement = menuManagement;
+public void setMenuManagement(MenuManagement menuManagement) {
+    this.menuManagement = menuManagement;
      }
      
-    public void setApplication(FXMLUI application) {
-        this.application = application;
+public void setApplication(FXMLUI application) {
+    this.application = application;
     }
-     public void setSingleRecipeSceneController(SingleRecipeSceneController singleRecipeSceneController){
-        this.singleRecipeSceneController= singleRecipeSceneController;
+public void setSingleRecipeSceneController(SingleRecipeSceneController singleRecipeSceneController){
+    this.singleRecipeSceneController= singleRecipeSceneController;
     }
-     public void setMenuSceneController(MenuSceneController menuSceneController){
-        this.menuSceneController= menuSceneController;
+public void setMenuSceneController(MenuSceneController menuSceneController){
+    this.menuSceneController= menuSceneController;
  
     }
     
-    public void addRecipeClicked() {
-        application.setAddRecipeScene();
+public void addRecipeClicked() {
+     application.setAddRecipeScene();
     
  
     }
     
-   public ListView<Recipe> createRecipesListView(){
-        this.listView.setItems(createRecipesOlist());     
-           return this.listView;        
+public ListView<Recipe> createRecipesListView(){
+    this.listView.setItems(createRecipesOlist());     
+    return this.listView;        
 
    }
     
   
-    public  ObservableList<Recipe> createRecipesOlist(){
-           ObservableList<Recipe> recipesOl = FXCollections.observableArrayList(recipeManagement.getAll());
-             return recipesOl;
+public  ObservableList<Recipe> createRecipesOlist(){
+    ObservableList<Recipe> recipesOl = FXCollections.observableArrayList(recipeManagement.getAll());
+    return recipesOl;
        }
     
     
-    public void updateRecipesListView(){
-        
+public void updateRecipesListView(){
     createRecipesListView();
 
         
     }
-    public void letsCookButtonClicked(){  
+public void letsCookButtonClicked(){  
     Recipe resepti;
     resepti = this.listView.getSelectionModel().getSelectedItem();
     singleRecipeSceneController.setName(resepti.getName());
@@ -101,10 +100,10 @@ public class AllRecipesController implements Initializable {
     application.setSingleRecipeScene(); 
     }
     
-    @Override
+@Override
     public void initialize(URL url, ResourceBundle rb) {
      
-    }
+}
    
     public void surpriseButtonClicked(){
     Recipe resepti;
@@ -119,14 +118,15 @@ public class AllRecipesController implements Initializable {
 }
       
     public  ListView<Menu> updatePickMenu(){
-        this.pickMenuListView.setItems(createMenusOlist());
-        return this.pickMenuListView;
-      }
-         
-    public ObservableList<Menu> createMenusOlist(){
-        HashMap<String,Menu> menus = menuManagement.getAllMenus();
-        ObservableList<Menu> menusOl = FXCollections.observableArrayList(menus.values());
-        return menusOl;
+    this.pickMenuListView.setItems(createMenusOlist());
+    return this.pickMenuListView;
+     }
+           
+    
+public ObservableList<Menu> createMenusOlist(){       
+    HashMap<String,Menu> menus = menuManagement.getAllMenus();
+    ObservableList<Menu> menusOl = FXCollections.observableArrayList(menus.values());
+    return menusOl;
       }
     
     public void pickMenuButtonClicked(){

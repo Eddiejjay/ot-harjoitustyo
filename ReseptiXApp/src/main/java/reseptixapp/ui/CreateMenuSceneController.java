@@ -105,9 +105,9 @@ public void createMenuButtonClicked(){
     
     
     System.out.println("Testi");
-    System.out.println(menuManagement.getAllMenus());
-    
-   allRecipesController.updatePickMenu();
+//    System.out.println(menuManagement.getAllMenus());
+//    
+  allRecipesController.updatePickMenu();
     
     application.setAllRecipesScene();
             
