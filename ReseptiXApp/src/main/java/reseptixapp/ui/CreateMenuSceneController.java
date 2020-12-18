@@ -8,6 +8,7 @@ package reseptixapp.ui;
 import reseptixapp.ui.AllRecipesController;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -92,16 +93,17 @@ public void fillComboBox(){
 }
 
 public void createMenuButtonClicked(){
-    
-    Recipe recipeMonday = cbMonday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeTuesday = cbTuesday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeWednesday = cbWednesday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeThursday = cbThursday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeFriday = cbFriday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeSaturday = cbSaturday.getSelectionModel().getSelectedItem(); 
-    Recipe recipeSunday = cbSunday.getSelectionModel().getSelectedItem(); 
-    
-    menuManagement.createMenu(menuName.getText(),recipeMonday, recipeTuesday, recipeWednesday, recipeThursday, recipeFriday, recipeSaturday, recipeSunday);  
+    List<Recipe> recipes = new ArrayList<>();
+    recipes.add(cbMonday.getSelectionModel().getSelectedItem());
+    recipes.add(cbTuesday.getSelectionModel().getSelectedItem());
+    recipes.add(cbWednesday.getSelectionModel().getSelectedItem());
+    recipes.add(cbThursday.getSelectionModel().getSelectedItem());
+    recipes.add(cbFriday.getSelectionModel().getSelectedItem());
+    recipes.add(cbSaturday.getSelectionModel().getSelectedItem());
+    recipes.add(cbSunday.getSelectionModel().getSelectedItem());
+
+
+    menuManagement.createMenu(menuName.getText(),recipes);  
     
     
     System.out.println("Testi");
@@ -113,7 +115,7 @@ public void createMenuButtonClicked(){
             
 }
   
-         
+
     
  
 }

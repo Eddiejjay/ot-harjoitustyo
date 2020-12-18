@@ -123,7 +123,7 @@ public void letsCookButtonClicked(){
      }
            
     
-public ObservableList<Menu> createMenusOlist(){       
+    public ObservableList<Menu> createMenusOlist(){       
     HashMap<String,Menu> menus = menuManagement.getAllMenus();
     ObservableList<Menu> menusOl = FXCollections.observableArrayList(menus.values());
     return menusOl;

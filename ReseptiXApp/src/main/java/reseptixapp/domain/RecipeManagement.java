@@ -30,7 +30,7 @@ public class RecipeManagement {
     
     public  Recipe createRecipe(String name, String instruction) {
         Recipe recipe = new Recipe(name, instruction); 
-        database.addRecipeToDatabase(name, instruction);
+        database.addRecipeToDatabase(recipe);
         // tarkastele tämä vielä miten toimi  alla 
         return recipe;
     }

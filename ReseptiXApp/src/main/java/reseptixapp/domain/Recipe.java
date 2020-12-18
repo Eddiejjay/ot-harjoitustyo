@@ -12,11 +12,18 @@ import java.util.ArrayList;
  * @author mazeero
  */
 public class Recipe {
+    private Integer id;
     private String name;
     private String instruction;
     
     public Recipe(String name, String instruction) {
       
+        this.instruction = instruction;
+        this.name = name;
+    }
+    
+     public Recipe(int id, String name, String instruction) {
+        this.id = id;
         this.instruction = instruction;
         this.name = name;
     }
@@ -36,6 +43,12 @@ public class Recipe {
     }
     public String getName() {
         return this.name;
+    }
+    public Integer getId(){
+        return id;
+    }
+    public void  setId(Integer id){
+        this.id=id;
     }
 
 

@@ -6,6 +6,7 @@
 package reseptixapp.domain;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,30 +14,22 @@ import java.util.Map;
  * @author mazeero
  */
 public class Menu {
+    private Integer id;
     private String name;
-    private Recipe mon;
-    private Recipe tue;
-    private Recipe wed;
-    private Recipe thu;
-    private Recipe fri;
-    private Recipe sat;
-    private Recipe sun;
-
+    private List<Recipe> recipes;
    
-    public Menu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri, Recipe sat, Recipe sun) {
-        this.name = name;
-        this.mon = mon;
-        this.tue = tue;
-        this.wed = wed;
-        this.thu = thu;
-        this.fri = fri;
-        this.sat = sat;
-        this.sun = sun;
-    
-    
-    
+    public Menu(String name, List<Recipe> recipes) {
+        this.name = name; 
+        this.recipes = recipes; 
+  
     }
     
+    public Menu(Integer id, String name, List<Recipe> recipes) {
+        this.name = name; 
+        this.recipes = recipes; 
+        this.id = id;
+    
+    }
     
     public String getName() {
         return this.name;
@@ -46,31 +39,41 @@ public String toString() {
         return this.getName();
     }
 
-    public Recipe getMondayRecipe() {
-        return this.mon;
+    public List<Recipe> geRecipes() {
+       return this.recipes;
+    }
+
+public Integer getId(){
+    return this.id;
+}
+public void setId(Integer id){
+    this.id = id;
+}
+public Recipe getMondayRecipe(){
+    return recipes.get(0);
     
-    }
-    public Recipe getTuesdayRecipe() {
-        return this.tue;
-    }
-    public Recipe getWednesdayRecipe() {
-        return this.wed;
+}
+public Recipe getTuesdayRecipe(){
+    return recipes.get(1);
+}
 
-    }
-    public Recipe getThursdayRecipe() {
-        return this.thu;
+public Recipe getWednesdayRecipe(){
+    return recipes.get(2);
+}
 
-    }
-    public Recipe getFridayRecipe() {
-        return this.fri;
+public Recipe getThursdayRecipe(){
+    return recipes.get(3);
+}
 
-    }
-    public Recipe getSaturdayRecipe() {
-        return this.sat;
+public Recipe getFridayRecipe(){
+    return recipes.get(4);
+}
 
-    }
-    public Recipe getSundayRecipe() {
-        return this.sun;
+public Recipe getSaturdayRecipe(){
+    return recipes.get(5);
+}
 
-    }
+public Recipe getSundayRecipe(){
+    return recipes.get(6);
+}
 }

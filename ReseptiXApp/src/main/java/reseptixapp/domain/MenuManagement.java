@@ -5,7 +5,9 @@
  */
 package reseptixapp.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import reseptixapp.dao.DatabaseMenuDao;
 
@@ -24,19 +26,17 @@ public class MenuManagement {
     }
     
     
-    public Menu createMenu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri, Recipe sat, Recipe sun) {
-        Menu menu = new Menu(name, mon, tue, wed, thu, fri, sat, sun);
-      
-        String mondayId = menu.getMondayRecipe().getName();
-        String tuesdayId = menu.getTuesdayRecipe().getName();
-        String wednesdayId = menu.getWednesdayRecipe().getName();
-        String thursdayId = menu.getThursdayRecipe().getName();
-        String fridayId = menu.getFridayRecipe().getName();
-        String saturdayId = menu.getSaturdayRecipe().getName();
-        String sundayId = menu.getSundayRecipe().getName();
+    public Menu createMenu(String name, List<Recipe> recipes) {
+        Menu menu = new Menu(name, recipes);
+        List<Integer> menuRecipeIds = new ArrayList<>();
+        
+        for (Recipe recipe : recipes) {
+            menuRecipeIds.add(recipe.getId());
+        }
         
         
-        database.addMenuToDatabase(menu.getName(), mondayId, tuesdayId, wednesdayId, thursdayId, fridayId, saturdayId, sundayId);
+        database.addMenuToDatabase(menu.getName(),menuRecipeIds);
+        System.out.println("Menumanagement create menu");
         return menu;
      
        
@@ -49,8 +49,8 @@ public class MenuManagement {
     
     
     }
-    public Menu getMenubyName(String name) {
-        return database.getMenuByName(name);
+    public Menu getMenubyId(Integer menuId) {
+        return database.getMenuById(menuId);
 
     
     } 

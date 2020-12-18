@@ -5,12 +5,14 @@
  */
 package reseptixapp.ui;
 
+import java.sql.Connection;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import reseptixapp.dao.DatabaseConnection;
 import reseptixapp.dao.DatabaseMenuDao;
 import reseptixapp.dao.DatabaseRecipeDao;
 import reseptixapp.domain.MenuManagement;
@@ -23,8 +25,10 @@ import reseptixapp.domain.RecipeManagement;
  */
 public class FXMLUI extends Application{
     
-    private DatabaseRecipeDao database;
-    private DatabaseMenuDao database1;
+    private DatabaseRecipeDao databaseRecipeDao;
+    private DatabaseMenuDao databaseMenuDao;
+    private DatabaseConnection databaseConnection;
+    private Connection connection;
     private RecipeManagement recipeManagement;
     private MenuManagement menuManagement;
   
@@ -40,17 +44,17 @@ public class FXMLUI extends Application{
     @Override
     public void init() throws Exception {  
         
-        
-    database = new DatabaseRecipeDao("testi.db");
-    database1 = new DatabaseMenuDao("testi.db");
-    database.connect();
-    database1.connect();
-    database.getAllRecipes();
-    database.getRecipeByName("testi");
-  
+    databaseConnection = new DatabaseConnection("liitostaulumukana.db");   
+    this.connection = databaseConnection.connect();
+      
+      
+      
+      
+    databaseRecipeDao = new DatabaseRecipeDao(this.connection);
+    databaseMenuDao = new DatabaseMenuDao(this.connection);
     
-    recipeManagement = new RecipeManagement(database);
-    menuManagement = new MenuManagement(database1);
+    recipeManagement = new RecipeManagement(databaseRecipeDao);
+    menuManagement = new MenuManagement(databaseMenuDao);
     
  
    
@@ -121,6 +125,7 @@ public class FXMLUI extends Application{
     createMenuSceneController.fillComboBox();
     allRecipesSceneController.updateRecipesListView();
     allRecipesSceneController.updatePickMenu();
+    menuManagement.getAllMenus();
 
     
     }
