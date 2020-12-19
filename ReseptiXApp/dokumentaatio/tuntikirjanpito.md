@@ -28,10 +28,10 @@
 |7.12|1h|arkkitehtuurikuvaus  |
 |8.12 |5h |tietokannan säätäminen |
 |8.12 |1h |käyttöohjeen alustus|
-| | ||
-| | ||
-| | ||
-| | ||
-| | ||
+|15.12|4h |tietokannan säätö|
+|16.12| 4h|tietokannan säätö|
+|17.12 |4h |tietokannan säätö|
+|18.12 |1,5h |koodin siistiminen + javadoc päivitys|
+|19.12 | ||
 
-| Yhteensä |73,5h | |
+| Yhteensä |87hh| |
