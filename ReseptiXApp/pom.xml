@@ -95,7 +95,8 @@
                 <configuration>
                     <excludes>
                          <exclude>reseptixapp/ui/*</exclude>
-                         <exclude>reseptixapp/*</exclude>
+                
+                         <exclude>reseptixapp/Main.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
