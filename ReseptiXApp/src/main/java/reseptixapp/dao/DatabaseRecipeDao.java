@@ -45,62 +45,6 @@ public class DatabaseRecipeDao {
     }
   
     /**
-    * Reseptin  hakeminen id:n mukaan tietokannasta
-    *
-    * @param id haettavan reseptin id   
-    * 
-    * @return palauttaa reseptin
-    */
-//    public Recipe getRecipeById(Integer id){
-//        PreparedStatement ps = null;
-//        ResultSet rs = null;  
-//        try {
-//            String sql = "SELECT * FROM recipe where id = ?";
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, Integer.toString(id));
-//            rs = ps.executeQuery();
-//            String name = rs.getString("recipename");
-//            String instruction = rs.getString("instruction");
-//            
-//        return new Recipe(name, instruction);
-//   
-//        } catch (SQLException e) {
-//            System.out.println( e);
-//        }
-//        return new Recipe("recipename", "instruction");      
-//    }
-    
-        /**
-    * Reseptin  hakeminen nimen mukaan tietokannasta
-    *
-    * @param name1 haettavan reseptin nimi  
-    * 
-    * @return palauttaa reseptin
-    */
-   
-//    public Recipe getRecipeByName(String name1) {
-//        PreparedStatement ps = null;
-//        ResultSet rs = null;
-//    
-//        try {
-//            String sql = "SELECT * FROM recipe where recipename = ?";
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, name1);
-//            rs = ps.executeQuery();
-//            
-//            String name = rs.getString("name");
-//            String instruction = rs.getString("instruction");
-//            return new Recipe(name, instruction);
-//   
-//        } catch (SQLException e) {
-//            System.out.println(e.toString());
-//        }
-//        
-//        return new Recipe("recipename", "instruction"); 
-//          
-//
-//    }
-    /**
     * Kaikkien reseptien hakeminen tietokannasta
     * 
     * @return palauttaa kaikki reseptit
@@ -118,7 +62,7 @@ public class DatabaseRecipeDao {
                 Integer id = rs.getInt("id");
                 String name = rs.getString("recipename");
                 String instruction = rs.getString("instruction");
-                recipes.add(new Recipe(id,name, instruction));    
+                recipes.add(new Recipe(id, name, instruction));    
             }
             return recipes;
      

@@ -19,18 +19,18 @@ import java.sql.SQLException;
  * Tietokantayhteyden sisältävä luokka
  */
 public class DatabaseConnection {
-     private String databaseName;
+    private String databaseName;
      
-     public DatabaseConnection(String databaseName){
-         this.databaseName = databaseName;
-     }
+    public DatabaseConnection(String databaseName) {
+        this.databaseName = databaseName;
+    }
      
      /**
     * Tietokanta yhteyden luominen
     
     * @return tietokanta yhteys
     */
-     public Connection connect() {
+    public Connection connect() {
         Connection con = null;
         try { 
             Class.forName("org.sqlite.JDBC");

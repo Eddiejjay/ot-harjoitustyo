@@ -26,7 +26,7 @@ public class Recipe {
         this.name = name;
     }
     
-     public Recipe(int id, String name, String instruction) {
+    public Recipe(int id, String name, String instruction) {
         this.id = id;
         this.instruction = instruction;
         this.name = name;
@@ -48,16 +48,16 @@ public class Recipe {
     public String getName() {
         return this.name;
     }
-    public Integer getId(){
+    public Integer getId() {
         return id;
     }
-    public void  setId(Integer id){
-        this.id=id;
+    public void  setId(Integer id) {
+        this.id = id;
     }
 
 
     @Override
-public String toString() {
+    public String toString() {
         return this.getName();
     }
 }

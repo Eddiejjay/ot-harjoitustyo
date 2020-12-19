@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import reseptixapp.dao.DatabaseMenuDao;
 
-
 /**
  *
  * @author mazeero
@@ -23,11 +22,9 @@ import reseptixapp.dao.DatabaseMenuDao;
  */
 public class MenuManagement {
     private DatabaseMenuDao database;
-      
+    
     public MenuManagement(DatabaseMenuDao database) {
-        this.database = database;
-         
-           
+        this.database = database;     
     }
     
     /**
@@ -45,17 +42,10 @@ public class MenuManagement {
         for (Recipe recipe : recipes) {
             menuRecipeIds.add(recipe.getId());
         }
-        
-        
-        database.addMenuToDatabase(menu.getName(),menuRecipeIds);
-        System.out.println("Menumanagement create menu");
-        return menu;
-     
        
-        
+        database.addMenuToDatabase(menu.getName(), menuRecipeIds);
+        return menu; 
     }
-
-  
     /**
     *Kaikkien menujen hakeminen
     * 
@@ -63,17 +53,5 @@ public class MenuManagement {
     */
     public HashMap<String, Menu> getAllMenus() {
         return database.getAllMenus();
-    
-    
     }
-     /**
-    *Menun hakeminen id:n mukaan
-    * 
-    * @return menu
-    */
-//    public Menu getMenubyId(Integer menuId) {
-//        return database.getMenuById(menuId);
-//
-//    
-//    } 
 }

@@ -41,45 +41,45 @@ public class Menu {
     }
     
     @Override
-public String toString() {
+    public String toString() {
         return this.getName();
     }
 
     public List<Recipe> geRecipes() {
-       return this.recipes;
+        return this.recipes;
     }
 
-public Integer getId(){
-    return this.id;
-}
-public void setId(Integer id){
-    this.id = id;
-}
-public Recipe getMondayRecipe(){
-    return recipes.get(0);
+    public Integer getId() {
+        return this.id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Recipe getMondayRecipe() {
+        return recipes.get(0);
     
-}
-public Recipe getTuesdayRecipe(){
-    return recipes.get(1);
-}
+    }
+    public Recipe getTuesdayRecipe() {
+        return recipes.get(1);
+    }
+ 
+    public Recipe getWednesdayRecipe() {
+        return recipes.get(2);
+    }
 
-public Recipe getWednesdayRecipe(){
-    return recipes.get(2);
-}
+    public Recipe getThursdayRecipe() {
+        return recipes.get(3);
+    }
 
-public Recipe getThursdayRecipe(){
-    return recipes.get(3);
-}
+    public Recipe getFridayRecipe() {
+        return recipes.get(4);
+    }
 
-public Recipe getFridayRecipe(){
-    return recipes.get(4);
-}
+    public Recipe getSaturdayRecipe() {
+        return recipes.get(5);
+    }
 
-public Recipe getSaturdayRecipe(){
-    return recipes.get(5);
-}
-
-public Recipe getSundayRecipe(){
-    return recipes.get(6);
-}
+    public Recipe getSundayRecipe() {
+        return recipes.get(6);
+    }
 }

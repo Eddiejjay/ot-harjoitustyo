@@ -44,7 +44,7 @@ public class FXMLUI extends Application{
     @Override
     public void init() throws Exception {  
         
-    databaseConnection = new DatabaseConnection("liitostaulumukana.db");   
+    databaseConnection = new DatabaseConnection("recipesAndMenus.db");   
     this.connection = databaseConnection.connect();
       
       
