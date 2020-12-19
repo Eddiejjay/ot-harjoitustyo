@@ -11,6 +11,10 @@ import java.util.ArrayList;
  *
  * @author mazeero
  */
+
+/**
+ *Yksittäistä reseptiä kuvaava luokka
+ */
 public class Recipe {
     private Integer id;
     private String name;

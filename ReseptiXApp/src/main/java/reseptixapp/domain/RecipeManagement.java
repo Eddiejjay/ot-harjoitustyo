@@ -18,16 +18,28 @@ import reseptixapp.dao.DatabaseRecipeDao;
  *
  * @author mazeero
  */
+
+/**
+ 
+ * Reseptien toimintoja käsittelevä luokka ui:in ja tietokannan välillä
+ */
 public class RecipeManagement {
 
-    public DatabaseRecipeDao database;
+    private DatabaseRecipeDao database;
 
     
     public RecipeManagement(DatabaseRecipeDao database) {
 
         this.database = database;
     }
-    
+    /**
+    * Uuden reseptin luominen
+    *
+    * @param name luotavan reseptin nimi
+    * @param instruction  luotavan reseptin ainesosat ja ohje  
+    * 
+    * @return menu palauttaa luodun reseptin
+    */
     public  Recipe createRecipe(String name, String instruction) {
         Recipe recipe = new Recipe(name, instruction); 
         database.addRecipeToDatabase(recipe);
@@ -35,7 +47,11 @@ public class RecipeManagement {
         return recipe;
     }
    
-   
+   /**
+    * Satunnaisen reseptin hakeminen
+    * 
+    * @return satunnainen resepti
+    */
     public Recipe getRandom() { 
         Random random = new Random();
         List<Recipe> reseptit = database.getAllRecipes();
@@ -44,7 +60,10 @@ public class RecipeManagement {
         return  reseptit.get(random.nextInt(reseptit.size()));
     }
    
- 
+ /**
+    * Kaikkien reseptien hakeminen 
+    * @return kaikki reseptit
+    */
     public List<Recipe> getAll() {
         return database.getAllRecipes();
              

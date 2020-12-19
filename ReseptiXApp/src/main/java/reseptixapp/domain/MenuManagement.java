@@ -16,6 +16,11 @@ import reseptixapp.dao.DatabaseMenuDao;
  *
  * @author mazeero
  */
+
+/**
+ 
+ * Menujen toimintoja käsittelevä luokka ui:n ja tietokannan välillä 
+ */
 public class MenuManagement {
     private DatabaseMenuDao database;
       
@@ -25,7 +30,14 @@ public class MenuManagement {
            
     }
     
-    
+    /**
+    * Uuden menun luominen
+    *
+    * @param name luotavan menun nimi
+    * @param recipes  luotavan menun reseptit  
+    * 
+    * @return menu palauttaa luodun menun
+    */
     public Menu createMenu(String name, List<Recipe> recipes) {
         Menu menu = new Menu(name, recipes);
         List<Integer> menuRecipeIds = new ArrayList<>();
@@ -44,11 +56,21 @@ public class MenuManagement {
     }
 
   
+    /**
+    *Kaikkien menujen hakeminen
+    * 
+    * @return kaikki menut
+    */
     public HashMap<String, Menu> getAllMenus() {
         return database.getAllMenus();
     
     
     }
+     /**
+    *Menun hakeminen id:n mukaan
+    * 
+    * @return menu
+    */
     public Menu getMenubyId(Integer menuId) {
         return database.getMenuById(menuId);
 

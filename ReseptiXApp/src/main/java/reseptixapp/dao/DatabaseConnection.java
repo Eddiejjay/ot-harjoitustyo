@@ -13,12 +13,23 @@ import java.sql.SQLException;
  *
  * @author mazeero
  */
+
+/**
+ 
+ * Tietokantayhteyden sisältävä luokka
+ */
 public class DatabaseConnection {
      private String databaseName;
      
      public DatabaseConnection(String databaseName){
          this.databaseName = databaseName;
      }
+     
+     /**
+    * Tietokanta yhteyden luominen
+    
+    * @return tietokanta yhteys
+    */
      public Connection connect() {
         Connection con = null;
         try { 

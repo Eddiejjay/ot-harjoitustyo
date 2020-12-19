@@ -17,17 +17,27 @@ import reseptixapp.domain.Recipe;
  *
  * @author mazeero
  */
+/**
+ 
+ * Menujen tietokantatoiminnallisuuden toteuttava luokka 
+ */
+
+
 public class DatabaseMenuDao { 
     private Connection con;
      
-        public DatabaseMenuDao(Connection con) {
-            this.con = con;
-        }
+public DatabaseMenuDao(Connection con) {
+    this.con = con;
+ }
 
-    
+    /**
+    * Lisää menun tietokantaan
+    *
+    * @param name luotavan menun nimi
+    * @param menuRecipeIds  luotavan menun reseptien id:t
+    */
     
     public void addMenuToDatabase(String name, List<Integer> menuRecipeIds) {
-        System.out.println("Add menutodatabase ");
         PreparedStatement ps = null;
         PreparedStatement ps2 = null;
         PreparedStatement ps3 = null;
@@ -37,34 +47,23 @@ public class DatabaseMenuDao {
             String sql = "INSERT INTO menu(menuname) VALUES(?)";
             String sql2 = "SELECT id FROM Menu WHERE id=(SELECT max(id) FROM Menu)"; 
             String sql3 = "INSERT INTO MenusRecipes (recipe_id, menu_id) VALUES (?,?)";
-         
-       
      
-            // 1. sql koment 
             ps = con.prepareStatement(sql);
             ps.setString(1, name);
             ps.execute();
-            System.out.println("Perseenreikäå");
-            
-            
-            // 2. sql komento 
-           
+   
             ps2 = con.prepareStatement(sql2);
-            System.out.println("ps2 prepare ");
             rs = ps2.executeQuery();
             int  menuId = rs.getInt("id")+1;
             
-               // 3. sql komento 
-           
-             for (int i = 0; i < menuRecipeIds.size() ; i++) {
-             ps3 = con.prepareStatement(sql3);
-             ps3.setInt(1,menuRecipeIds.get(i));
-             ps3.setInt(2,menuId);
-             ps3.execute();
+            for (int i = 0; i < menuRecipeIds.size() ; i++) {
+                ps3 = con.prepareStatement(sql3);
+                ps3.setInt(1,menuRecipeIds.get(i));
+                ps3.setInt(2,menuId);
+                ps3.execute();
                      
              }
            
-            System.out.println("Menu added to database!");
         } catch (SQLException e) {
             System.out.println(e.toString());
         }
@@ -72,7 +71,12 @@ public class DatabaseMenuDao {
         
     }
     
-
+/**
+    * Menun hakeminen tietokannasta id:n perusteella
+    *
+    * @param id haettavan menun id
+    * @return menu
+    */
     
     public Menu getMenuById(Integer id) {
        
@@ -106,24 +110,18 @@ public class DatabaseMenuDao {
   
         } catch (SQLException e) {
             System.out.println(e.toString());
-//        } finally { 
-//            
-//            try { 
-//                //rs.close();
-//                //ps.close();
-//              //  con.close();
-//            }
-//            catch (SQLException e) {
-//                System.out.println(e.toString());
-//        
-//            }
-//        
         }
         
      return null;
       
 
     }
+    
+    /**
+    * Kaikkien menujen hakeminen tietokannasta
+    * 
+    * @return Kaikki menut
+    */
     
      public HashMap<String, Menu> getAllMenus() {
 
@@ -132,66 +130,45 @@ public class DatabaseMenuDao {
 
   
         try {
-           // sql 1 menu count 
-//            String sql = "SELECT id FROM Menu WHERE id=(SELECT max(id) FROM Menu)";
             String sql = "SELECT id from Menu";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            //int  menuCount = rs.getInt("id");
             while (rs.next()){
-               menuIds.add(rs.getInt("id"));
-                
+               menuIds.add(rs.getInt("id"));    
             }
-          
-            
-            // sql2 
-            
+       
             String sql2 = " SELECT * FROM Menu, Recipe, MenusRecipes WHERE Menu.id = menu_id AND Recipe.id = recipe_id and menu.id = ?;";
-            rs.close();
-            for (Integer id : menuIds){
-               
-            //            for (int i = 1; i <= menuCount;i++){
-                //Errorit tulee kun for looppi lähtee toista kertaa käyntiin 
-           //         rs2=con.createStatement().executeQuery(" SELECT * FROM Menu, Recipe, MenusRecipes WHERE Menu.id = menu_id AND Recipe.id = recipe_id and menu.id = ?;"); 
-                System.out.println(menuIds);
-                
-                
-                
+          
+            for (Integer id : menuIds){    
                 PreparedStatement ps2 = con.prepareStatement(sql2);
                 ps2.setInt(1, id);
                 ResultSet rs2= ps2.executeQuery();
-                
-                
                 String menuName = "";
                 List<Recipe> menusRecipes = new ArrayList<>();
-                  //Haetaan kaikki reseptit menuun 
-                  
                      while (rs2.next()) {
-                          menuName = rs2.getString("menuName");
-                         Integer recipeId = rs2.getInt("recipe_id");
+                        menuName = rs2.getString("menuName");
+                        Integer recipeId = rs2.getInt("recipe_id");
                         String recipeName = rs2.getString("recipeName");
                         String instruction = rs2.getString("instruction");
-                        menusRecipes.add(new Recipe(recipeId, recipeName, instruction));  
-                         System.out.println(menusRecipes);
-                         
+                        menusRecipes.add(new Recipe(recipeId, recipeName, instruction));              
             }
-                      rs2.close();
-                 menus.put(menuName, new Menu(id,menuName ,menusRecipes)); 
+                menus.put(menuName, new Menu(id,menuName ,menusRecipes)); 
                  
-                System.out.println(menus);
         }
         return menus;
         
-                }catch (SQLException e) {
-                    System.out.println("p");
-                    
+            }catch (SQLException e) {            
             System.out.println(e.toString());
-             e.printStackTrace();
-            System.out.println("p");
+            e.printStackTrace();
         }
         return menus;
      }
             
+     /**
+    * Kaikkien menujen poistaminen tietokannasta
+    *
+   
+    */
      
     public void deleteMenusFromDatabase() {
         PreparedStatement ps = null;
@@ -202,7 +179,6 @@ public class DatabaseMenuDao {
           
         } catch (SQLException e) {
             System.out.println(e.toString());
-            System.out.println("Perse");
         }
  
     }

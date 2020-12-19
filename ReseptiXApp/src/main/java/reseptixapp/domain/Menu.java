@@ -13,6 +13,11 @@ import java.util.Map;
  
  * @author mazeero
  */
+/**
+ 
+ * Yksittäistä menuta kuvaava luokka
+ */
+
 public class Menu {
     private Integer id;
     private String name;
@@ -34,6 +39,7 @@ public class Menu {
     public String getName() {
         return this.name;
     }
+    
     @Override
 public String toString() {
         return this.getName();
