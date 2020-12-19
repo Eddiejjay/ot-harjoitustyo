@@ -32,9 +32,9 @@
 |16.12| 4h|tietokannan säätö|
 |17.12 |4h |tietokannan säätö|
 |18.12 |1,5h |koodin siistiminen + javadoc päivitys|
-| | ||
+|19.12|4h |testien säätö, jar testaus, checkstyle, databasedao luokkien siivous, esimerkkitietokannan teko |
 | | ||
 | | ||
 | | ||
 
-| Yhteensä |87h| |
+| Yhteensä |91h| |
