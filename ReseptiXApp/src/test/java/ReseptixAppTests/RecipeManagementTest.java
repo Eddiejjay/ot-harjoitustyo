@@ -69,6 +69,19 @@ public class RecipeManagementTest {
           
               assertEquals(recipe.getName(), recipe2.getName());
             
+        } 
+        
+        @Test 
+        public void getAllRecipesReturnsAllRecipes(){
+            
+        for (int i = 0; i < 10 ; i++){
+            recipeManagement.createRecipe("Hampparipizza", "23 kiloa kaalia");
+       
+        }
+        
+
+              assertEquals(recipeManagement.getAll().size(), 10);
+            
         }
 
    
