@@ -71,9 +71,9 @@ public class MenuManagement {
     * 
     * @return menu
     */
-    public Menu getMenubyId(Integer menuId) {
-        return database.getMenuById(menuId);
-
-    
-    } 
+//    public Menu getMenubyId(Integer menuId) {
+//        return database.getMenuById(menuId);
+//
+//    
+//    } 
 }

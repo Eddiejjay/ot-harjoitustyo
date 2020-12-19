@@ -5,12 +5,15 @@
  */
 package ReseptixAppTests;
 
+import java.sql.Connection;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import reseptixapp.dao.DatabaseConnection;
 import reseptixapp.dao.DatabaseMenuDao;
 import reseptixapp.dao.DatabaseRecipeDao;
 
@@ -24,10 +27,12 @@ import reseptixapp.domain.RecipeManagement;
  * @author mazeero
  */
 public class MenuManagementTest {
-       private DatabaseMenuDao menuDao;
-       private MenuManagement menuManagement;
-       private DatabaseRecipeDao database;
-       private RecipeManagement recipeManagement;
+  private RecipeManagement recipeManagement;
+    private DatabaseRecipeDao databaseRecipeDao;
+    private DatabaseMenuDao databaseMenuDao;
+    private DatabaseConnection databaseConnection;
+    private Connection connection;
+    private MenuManagement menuManagement;
        
     
     public MenuManagementTest() {
@@ -39,32 +44,39 @@ public class MenuManagementTest {
     @Before
     public void setUp() {
   
-        menuDao = new DatabaseMenuDao("junitTest.db");
-        database = new DatabaseRecipeDao("junitTest.db");
-        menuDao.deleteMenusFromDatabase();
-        database.deleteRecipesFromDatabase();
-        recipeManagement= new RecipeManagement(database);
-        menuManagement = new MenuManagement(menuDao);
+    databaseConnection = new DatabaseConnection("testi.db");
+    this.connection =  (Connection) databaseConnection.connect();
+    databaseRecipeDao = new DatabaseRecipeDao(this.connection);
+    databaseMenuDao = new DatabaseMenuDao(this.connection);
+    recipeManagement = new RecipeManagement (databaseRecipeDao);
+    menuManagement = new MenuManagement (databaseMenuDao);
+        
+    }
+   
+   @After 
+    
+  public void delete(){
+       databaseMenuDao.deleteMenusFromDatabase();
+      databaseRecipeDao.deleteRecipesFromDatabase();
         
     }
 
+    
 @Test
-
 public void createMenuCreatesMenu(){
-    Recipe recipe1 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe2 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe3 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe4 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe5 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe6 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-    Recipe recipe7 =  recipeManagement.createRecipe("Kaalilaatikko","14kg kaalia");
-     
-  
-   menuManagement.createMenu("Jorman KaaliMenu", recipe1, recipe2, recipe3, recipe4, recipe5, recipe6, recipe7);
+ 
+    for (int i = 0; i < 7 ; i++){
+        Recipe recipe = new Recipe("Kaalilaatikko", "14 kg kaalia");
+        databaseRecipeDao.addRecipeToDatabase(recipe);
+    }
+
+   menuManagement.createMenu("Jorman KaaliMenu",databaseRecipeDao.getAllRecipes());
    
    int menusSize = menuManagement.getAllMenus().size();
    assertEquals(1, menusSize);
    
 }
+
+
 
 }

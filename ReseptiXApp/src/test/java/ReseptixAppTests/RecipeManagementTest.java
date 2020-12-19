@@ -7,6 +7,7 @@ package ReseptixAppTests;
  */
 
 
+import java.sql.Connection;
 import reseptixapp.domain.Recipe;
 import reseptixapp.domain.RecipeManagement;
 import org.junit.After;
@@ -15,6 +16,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import reseptixapp.dao.DatabaseConnection;
 import reseptixapp.dao.DatabaseMenuDao;
 import reseptixapp.dao.DatabaseRecipeDao;
 
@@ -23,9 +25,11 @@ import reseptixapp.dao.DatabaseRecipeDao;
  * @author mazeero
  */
 public class RecipeManagementTest {
-       private  RecipeManagement recipeManagement;
-         private DatabaseRecipeDao database;
-         private DatabaseMenuDao menuDao;
+    private RecipeManagement recipeManagement;
+    private DatabaseRecipeDao databaseRecipeDao;
+    //private DatabaseMenuDao databaseMenuDao;
+    private DatabaseConnection databaseConnection;
+    private Connection connection;
        
     
     public RecipeManagementTest() {
@@ -34,26 +38,26 @@ public class RecipeManagementTest {
    
     @Before
     public void setUp() {
- 
-        database = new DatabaseRecipeDao("junitTest.db");
-        recipeManagement = new RecipeManagement(database);
-        menuDao = new DatabaseMenuDao("junitTest.db");
-        menuDao.deleteMenusFromDatabase();
-        database.deleteRecipesFromDatabase();
-        
-        
+    databaseConnection = new DatabaseConnection("testi.db");
+    this.connection =  (Connection) databaseConnection.connect();
+    databaseRecipeDao = new DatabaseRecipeDao(this.connection);
+    //databaseMenuDao = new DatabaseMenuDao(this.connection);
+    recipeManagement = new RecipeManagement (databaseRecipeDao);
+          
+    }
+    @After
+    public void delete() {
+        databaseRecipeDao.deleteRecipesFromDatabase();
     }
     
     
     @Test
     public void createRecipeAddsRecipeToList() {
-       
-    
-        
         recipeManagement.createRecipe("Kaalilaatikko", "23 kiloa kaalia");
         recipeManagement.createRecipe("pullaa", "23 kiloa kaalia");
-        int vastaus = database.getAllRecipes().size();
+        int vastaus = databaseRecipeDao.getAllRecipes().size();
         assertEquals(2, vastaus);
+        
     }
    
     @Test 
@@ -66,7 +70,6 @@ public class RecipeManagementTest {
               assertEquals(recipe.getName(), recipe2.getName());
             
         }
-   
 
    
 }

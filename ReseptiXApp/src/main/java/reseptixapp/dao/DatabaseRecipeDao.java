@@ -51,24 +51,24 @@ public class DatabaseRecipeDao {
     * 
     * @return palauttaa reseptin
     */
-    public Recipe getRecipeById(Integer id){
-        PreparedStatement ps = null;
-        ResultSet rs = null;  
-        try {
-            String sql = "SELECT * FROM recipe where id = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, Integer.toString(id));
-            rs = ps.executeQuery();
-            String name = rs.getString("recipename");
-            String instruction = rs.getString("instruction");
-            
-        return new Recipe(name, instruction);
-   
-        } catch (SQLException e) {
-            System.out.println( e);
-        }
-        return new Recipe("recipename", "instruction");      
-    }
+//    public Recipe getRecipeById(Integer id){
+//        PreparedStatement ps = null;
+//        ResultSet rs = null;  
+//        try {
+//            String sql = "SELECT * FROM recipe where id = ?";
+//            ps = con.prepareStatement(sql);
+//            ps.setString(1, Integer.toString(id));
+//            rs = ps.executeQuery();
+//            String name = rs.getString("recipename");
+//            String instruction = rs.getString("instruction");
+//            
+//        return new Recipe(name, instruction);
+//   
+//        } catch (SQLException e) {
+//            System.out.println( e);
+//        }
+//        return new Recipe("recipename", "instruction");      
+//    }
     
         /**
     * Reseptin  hakeminen nimen mukaan tietokannasta
@@ -78,28 +78,28 @@ public class DatabaseRecipeDao {
     * @return palauttaa reseptin
     */
    
-    public Recipe getRecipeByName(String name1) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-    
-        try {
-            String sql = "SELECT * FROM recipe where recipename = ?";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, name1);
-            rs = ps.executeQuery();
-            
-            String name = rs.getString("name");
-            String instruction = rs.getString("instruction");
-            return new Recipe(name, instruction);
-   
-        } catch (SQLException e) {
-            System.out.println(e.toString());
-        }
-        
-        return new Recipe("recipename", "instruction"); 
-          
-
-    }
+//    public Recipe getRecipeByName(String name1) {
+//        PreparedStatement ps = null;
+//        ResultSet rs = null;
+//    
+//        try {
+//            String sql = "SELECT * FROM recipe where recipename = ?";
+//            ps = con.prepareStatement(sql);
+//            ps.setString(1, name1);
+//            rs = ps.executeQuery();
+//            
+//            String name = rs.getString("name");
+//            String instruction = rs.getString("instruction");
+//            return new Recipe(name, instruction);
+//   
+//        } catch (SQLException e) {
+//            System.out.println(e.toString());
+//        }
+//        
+//        return new Recipe("recipename", "instruction"); 
+//          
+//
+//    }
     /**
     * Kaikkien reseptien hakeminen tietokannasta
     * 
@@ -138,6 +138,7 @@ public class DatabaseRecipeDao {
             String sql = "DELETE FROM Recipe";
             ps = con.prepareStatement(sql);
             ps.execute();
+            System.out.println("soi");
           
         } catch (SQLException e) {
             System.out.println(e.toString());

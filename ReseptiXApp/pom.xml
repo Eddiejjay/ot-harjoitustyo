@@ -94,8 +94,8 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>reseptixapp/ui/*</exclude>
-                         <exclude>reseptixapp/*</exclude>
+<!--                        <exclude>reseptixapp/ui/*</exclude>
+                         <exclude>reseptixapp/Main.*</exclude>-->
                     </excludes>
                 </configuration>
                 <executions>

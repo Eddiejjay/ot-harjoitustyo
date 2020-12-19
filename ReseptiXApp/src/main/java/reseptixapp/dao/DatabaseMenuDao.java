@@ -78,44 +78,44 @@ public DatabaseMenuDao(Connection con) {
     * @return menu
     */
     
-    public Menu getMenuById(Integer id) {
-       
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-            String sql = 
-                         "SELECT *\n" +
-                         "FROM Menu, Recipe, MenusRecipes \n" +
-                         "WHERE Menu.id = menu_id AND Recipe.id = recipe_id and menu.id = ?;";
-            ps = con.prepareStatement(sql);
-            ps.setString(1, Integer.toString(id));
-            rs = ps.executeQuery();
- 
-
-            String menuName = rs.getString("name");
-            List<Recipe> menusRecipes = new ArrayList<>();
-            String recipeId = "";
-            String recipeName = "";
-            String instruction = "";
-
-            while (rs.next()) {
-                recipeId = rs.getString("recipe.id");
-                recipeName = rs.getString("recipe.name");
-                instruction = rs.getString("recipe.instruction");
-                menusRecipes.add(new Recipe(Integer.parseInt(recipeId), recipeName, instruction));
-            }
-         
-        
-            return new Menu(menuName, menusRecipes);
-  
-        } catch (SQLException e) {
-            System.out.println(e.toString());
-        }
-        
-     return null;
+//    public Menu getMenuById(Integer id) {
+//       
+//        PreparedStatement ps = null;
+//        ResultSet rs = null;
+//        try {
+//            String sql = 
+//                         "SELECT *\n" +
+//                         "FROM Menu, Recipe, MenusRecipes \n" +
+//                         "WHERE Menu.id = menu_id AND Recipe.id = recipe_id and menu.id = ?;";
+//            ps = con.prepareStatement(sql);
+//            ps.setString(1, Integer.toString(id));
+//            rs = ps.executeQuery();
+// 
+//
+//            String menuName = rs.getString("name");
+//            List<Recipe> menusRecipes = new ArrayList<>();
+//            String recipeId = "";
+//            String recipeName = "";
+//            String instruction = "";
+//
+//            while (rs.next()) {
+//                recipeId = rs.getString("recipe.id");
+//                recipeName = rs.getString("recipe.name");
+//                instruction = rs.getString("recipe.instruction");
+//                menusRecipes.add(new Recipe(Integer.parseInt(recipeId), recipeName, instruction));
+//            }
+//         
+//        
+//            return new Menu(menuName, menusRecipes);
+//  
+//        } catch (SQLException e) {
+//            System.out.println(e.toString());
+//        }
+//        
+//     return null;
       
 
-    }
+//    }
     
     /**
     * Kaikkien menujen hakeminen tietokannasta
@@ -176,6 +176,11 @@ public DatabaseMenuDao(Connection con) {
             String sql = "DELETE FROM menu";
             ps = con.prepareStatement(sql);
             ps.execute();
+            
+            String sql2 = "DELETE FROM menusRecipes";
+            ps = con.prepareStatement(sql2);
+            ps.execute();
+          
           
         } catch (SQLException e) {
             System.out.println(e.toString());
