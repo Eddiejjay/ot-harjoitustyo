@@ -32,6 +32,9 @@
 |16.12| 4h|tietokannan säätö|
 |17.12 |4h |tietokannan säätö|
 |18.12 |1,5h |koodin siistiminen + javadoc päivitys|
-|19.12 | ||
+| | ||
+| | ||
+| | ||
+| | ||
 
-| Yhteensä |87hh| |
+| Yhteensä |87h| |
