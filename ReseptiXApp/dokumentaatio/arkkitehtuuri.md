@@ -43,14 +43,11 @@ RecipeManagement luokka tarjoaa seuraavat metodit
 - getRandom()
 - getAll() 
 
-MenuManagemetn luokka tarjoaa seuraavat metodit
-- createMenu(String name, Recipe mon, Recipe tue, Recipe wed, Recipe thu, Recipe fri, Recipe sat, Recipe sun)
+MenuManagement luokka tarjoaa seuraavat metodit
+- createMenu(String name, List<Recipe> recipes)
 - getAllMenus() 
-- getMenuByName(name)
 
 Management luokat pääsevät käsiksi tietokantaan luokkien DatabaseRecipeDao ja DatabaseMenuDao kautta. 
-
-
 
 TÄHÄN KUVA LUOKKA/PAKKAUSKAAVIO
 
@@ -71,7 +68,16 @@ Sovelluksessa on helppo muuttaa käytettävää tietokantaa. Käytettävän tiet
 Tietokanta sisältää kolme taulua. 
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/tietokantataulut.png">
 
+Tietokantaan lisätään tietoa ja sieltä haetaan tietoa luokkien databaseRecipeDao sekä databaseMenuDao avulla. 
 
+
+## Päätoiminnallisuudet 
+
+Reseptin lisääminen 
+
+Menun lisääminen 
+
+Reseptin katsominen 
 
 
 
