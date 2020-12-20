@@ -24,15 +24,23 @@ mvn test
 ##### Testikattavuusraportti
 mvn test jacoco:report
 
+Kattavuusraporttiin pääsee käsiksi avaamalla selaimella target/site/jacoco/index.html
+
 ##### Checkstyle-raportti
 mvn jxr:jxr checkstyle:checkstyle
+
+Virheilmoitukset näät avaamalla selaimella tiedoston target/site/checkstyle.html
 
 #### JavaDoc generointi
 
 mvn javadoc:javadoc
 
+JavaDocia pääset tarkastelemaan avaamalla selaimella tiedoston target/site/apidocs/index.html
+
 #### Jar-tiedoston luominen
 mvn package
+
+luo kansioon target ajettavan jar-tiedoston ReseptiXApp-1.0-SNAPSHOT.jar
 
 #### Jar- tiedoston ajaminen 
 GitHub releasena ladattu: 
