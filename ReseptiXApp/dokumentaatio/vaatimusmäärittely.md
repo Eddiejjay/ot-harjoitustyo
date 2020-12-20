@@ -10,38 +10,24 @@ Perusversiossa sovelluksessa on yksi käyttäjärooli, normaali käyttäjä.
 
 ## Käyttöliittymäluonnos 
 
-Sovelluksen perusversiossa on kolme näkymää. 
+Sovelluksen perusversiossa on viisi näkymää
 
 
-<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/Kayttoliittyma.jpg">
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/kliittymauusi.jpg">
 
 
-Käyttäjän avatessa sovelluksen, se aukeaa Reseptit- näkymään. Aloitusnäkymästä käyttäjä pääsee yksittäisen reseptin näkymään tuplaklikkaamalla ruoan nimeä.
-Käyttäjä pääsee siirtymään Uusi resepti- näkymään klikkaamalla nappia Lisää resepti.
+Käyttäjän avatessa sovelluksen, se aukeaa kotinäkymään missä on reseptit ja menut listattuna Aloitusnäkymästä käyttäjä pääsee yksittäisen reseptin näkymään klikkaamalla reseptiä ja painamalla "cook" tai "surprise" nappia. 
+Käyttäjä pääsee siirtymään add recipe näkymään klikkaamalla nappia add recipe. 
+Käyttäjä pääsee siirtymään create menu näkymään klikkaamalla nappia Make a menu.
+Käyttäjä pääsee siirtymään yksittäisen menun näkymään valitsemalla menun listalta ja painamalla Make a menu nappia.
+
+
 
 
 
 ## Perusversion tarjoama toiminnallisuus
 
-```diff 
-+- käyttäjä voi lisätä uuden reseptin -tehty viikolla 3
-
-+- käyttäjä näkee reseptiensä nimet listalla -tehty viikolla 3
-
-+- käyttäjä voi valita reseptin listalta ja "valitse"- nappia painamalla siirtyy yksittäisen reseptin näkymään - tehty viikolla 4
-
-+- käyttäjä voi halutessaan siiryä satunnaisen reseptin näkymään painamalla "satunnainen"- nappia - tehty viikolla 4
-
-+- käyttäjä voi luoda viikon menun tekemistään resepteistä - tehty viikolla 5
-
-+- laaja käyttöliittymä päivitys Java FXML käyttäen - tehty viikolla 5 
-
-+- menu toiminnallisuutta päivitetty siten että käyttäjä pääsee valitsemaan menun listalta ja katselemaan haluamaansa menuta - tehty viikolla 6
-
-+- sovellukseen on lisätty tietokanta - tehty viikolla 6
-
-```
-
+Sovelluksen perusversiossa käyttäjä voi lisätä ja tarkastella reseptejään sekä niistä tekemiään viikkokohtaisia menuja. Käyttäjä voi myös halutessaan arpoa näytettävän reseptin.
 
 ## Jatkokehitysideoita 
 
@@ -50,8 +36,6 @@ Sovelluksen perusversion valmistuttua, sovellukseen lisätään toiminnallisuuks
  - käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
 eri rekisteröityneet käyttäjät omilla resepteillään
 
-- viikko näkymä, jonka avulla käyttäjä voi suunnitella viikon ruokalistan 
-  - reseptien arvonta päivälle 
   - reseption arvonta koko viikolle 
 
 - reseptin muokkaus 
@@ -62,7 +46,7 @@ eri rekisteröityneet käyttäjät omilla resepteillään
 
 
 ## Toimintaympäristön rajoitteet
-- reseptit tallennetaan paikallisen koneen levylle
+- reseptit tallennetaan paikallisen koneen levylle tietokantaan
 - sovellus tulee pystyä suorittamaan, kääntämään ja testaamaan komentoriviltä
 käsin Helsingin yliopiston Linux-koneilla tai uusimmat päivitykset
 sisältävällä cubbli-linuxilla. 
