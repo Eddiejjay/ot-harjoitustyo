@@ -31,7 +31,7 @@ ESIMERKKEJÄ NAPPIEN TOIMINNASTA ?
 
 ## Sovelluslogiikka 
 
-Sovellukseen voi tallentaa reseptejä ja resepteistä koostuvia menuja. Sovelluslogiikka sisältää käsite luokat Recipe ja Menu. Menu sisältää useita reseptejä.
+Sovellukseen voi tallentaa reseptejä ja resepteistä koostuvia menuja. Sovelluslogiikka sisältää käsite luokat Recipe ja Menu. Menu sisältää useita reseptejä ja sama resepti voi olla monessa menussa. 
 
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/Monestamonen.png">
 
