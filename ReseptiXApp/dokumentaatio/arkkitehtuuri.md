@@ -46,14 +46,23 @@ Management luokat pääsevät käsiksi tietokantaan luokkien DatabaseRecipeDao j
 ###  Managemennt luokkien ja sovelluksn muiden osien yhteyksiä kuvaava luokka/pakkauskaavio: 
 
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/LuokkaPakkausKaavio.JPG">
-##  Päätoiminnallisuudet
 
+## Päätoiminnallisuudet
+
+Seuraavaksi kuvataan sovelluksen toimintaa parin keskeisen toiminnallisuuden osalta sekvenssikaavioiden avulla. 
 ### Reseptin lisäys metodin toiminta 
+Kunn addRecipe näkymässä on syötetty reseptin nimi sekä ohjeet ja painettu add nappia tapahtuu seuraavaa:
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/addRecipeSekvenssi.png">
 
+Tapahtumankäsittelijä kutsuu RecipeManagementin metodia createRecipe, joka saa parametrikseen reseptin nimen sekä ohjeen Stringeinä.RecipeManagement luo uuden reseptin ja kutsuu luoka dataBaseRecipeDao addRecipeToDatabase metodia joka saa parametrikseen reseptin. RecipeManagement palauttaa reseptin käyttöliittymälle. Käyttöliittymä kutsuu updateListView metodia joka päivittää etusivun resepti listan. Sekä kutsuu fillComboBox metodia joka päivittää CreateMenuScenen reseptivaihtoehdot. 
+
 ### Menun lisäys metodin toiminta 
+Kun createMenu näkymässä on syötetty menun nimi sekä valittu menulle tulevat reseptit ja painetaan Create Menu nappia tapahtuu seuraavaa:
 
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/createMenuSekvenssi.png">
+
+
+Tapahtumankäsittelijä kutsuu MenuManagementin metodia createMenu, joka saa parametrikseen menun nimen Srtringinä sekä Listan reseptejä. MenuManagement luo uuden menu olion ja kutsuu databaseMenuDao luokan metodia addMenuToDatabase. Tämä metodi saa parametrikseen menun nimen sekä listan reseptien id numeroita. DatabaseMenuDao luokka tallentaa menun tietokantaan. MenuManagement palauttaa luodun menun käyttöliittymälle. Käyttöliittymä kutsuu metodia updatePickView, joka päivittää näkymän menu listViewin. Lopuksi päivitetty etusivu näkymä näytetään käyttäjälle.
 
 
 ## Tietojen pysyväistallennus 
