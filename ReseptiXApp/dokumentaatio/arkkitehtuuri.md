@@ -33,7 +33,7 @@ ESIMERKKEJÄ NAPPIEN TOIMINNASTA ?
 
 Sovellukseen voi tallentaa reseptejä ja resepteistä koostuvia menuja. Sovelluslogiikka sisältää käsite luokat Recipe ja Menu. Menu sisältää useita reseptejä.
 
-<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/recipeAndMenu.jpg">
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/Monestamonen.png">
 
 
 RecipeManagement ja MenuManagement luokat tarjoavat toiminnallisuudet reseptien ja menujen luomiseen, tallentamiseen ja hakemiseen. 
@@ -69,8 +69,7 @@ Sovelluksen mukana tulee tietokanta recipesAndMenus.db sekä testi.db. RecipesAn
 Sovelluksessa on helppo muuttaa käytettävää tietokantaa. Käytettävän tietokannan nimi annetaan parametrina FXMLUIluokassa DataBaseConnection luokan konstruktorille. Testausta varten tietokannan voi muuttaa halutessaan testiluokistta. 
 
 Tietokanta sisältää kolme taulua. 
-
-TÄHÄN KUVA TIETOKANNASTA
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/tietokantataulut.png">
 
 
 
