@@ -1,6 +1,6 @@
 # Käyttöohje 
 
-Lataa tiedosto [ReseptiXapp.jar](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/ReseptiXapp)
+Lataa tiedosto [ReseptiXapp.jar](https://github.com/Eddiejjay/ot-harjoitustyo/releases)
 
 ## Ohjelman käynnistäminen
 
