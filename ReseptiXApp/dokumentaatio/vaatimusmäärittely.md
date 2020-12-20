@@ -34,13 +34,13 @@ Sovelluksen perusversiossa käyttäjä voi lisätä ja tarkastella reseptejään
 Sovelluksen perusversion valmistuttua, sovellukseen lisätään toiminnallisuuksia ajan salliessa seuraavasti.
  
  - käyttäjätunnuksen luominen, jolloin sovellusta voivat käyttää useat
-eri rekisteröityneet käyttäjät omilla resepteillään
+eri rekisteröityneet käyttäjät omilla resepteillään ja menuillaan. 
 
-  - reseption arvonta koko viikolle 
+  - reseption arvonta menulle
 
-- reseptin muokkaus 
+- reseptien ja menujen muokkaus 
 
-- kommentin lisääminen reseptiin 
+- kommentin lisääminen reseptiin
 
 - käyttäjätunnuksen poisto 
 
