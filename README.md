@@ -1,6 +1,6 @@
  # [ReseptiX App](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/ReseptiXApp)
  
- Sovelluksen avulla käyttäjä voi lisätä ja tarkastella omia reseptejään sekä luoda viikkokohtaisen ruokalistan. 
+ Sovelluksen avulla käyttäjä voi lisätä ja tarkastella omia reseptejään sekä luoda viikkokohtaisen menun.
 
 
  ## Dokumentaatio
