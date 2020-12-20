@@ -44,7 +44,12 @@
             </TextArea>
             <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addButtonClicked" text="Add" />
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" text="Back">
+                     <HBox.margin>
+                        <Insets right="350.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="25.0" prefWidth="172.0" text="Add" />
                </children>
             </HBox>
          </children>

@@ -105,8 +105,15 @@ public void createMenuButtonClicked(){
 
     menuManagement.createMenu(menuName.getText(),recipes);  
     
-  allRecipesController.updatePickMenu();
-    
+    allRecipesController.updatePickMenu();
+    menuName.setText("");
+    cbMonday.getSelectionModel().clearSelection();
+    cbTuesday.getSelectionModel().clearSelection();
+    cbWednesday.getSelectionModel().clearSelection();
+    cbThursday.getSelectionModel().clearSelection();
+    cbFriday.getSelectionModel().clearSelection();
+    cbSaturday.getSelectionModel().clearSelection();
+    cbSunday.getSelectionModel().clearSelection();
     application.setAllRecipesScene();
             
 }

@@ -29,6 +29,7 @@ public class AddRecipeSceneController implements Initializable {
     private CreateMenuSceneController createMenuSceneController;
     
     public Button add;
+    public Button backButton;
     public TextField newRecipeName;
     public TextArea newRecipeInstruction;
  
@@ -69,9 +70,10 @@ public class AddRecipeSceneController implements Initializable {
        application.setAllRecipesScene();
          
     }
-    
+    public void backButtonClicked(){
+    application.setAllRecipesScene();
     
     
  
 }
-  
+}
