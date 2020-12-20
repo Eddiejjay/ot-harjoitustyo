@@ -35,4 +35,4 @@
 |19.12|4h |testien säätö, jar testaus, checkstyle, databasedao luokkien siivous, esimerkkitietokannan teko |
 |20.12 |5h|dokumentaatio viimeistely, uusi release, final touch |
 
-| Yhteensä |96h| |
+| Yhteensä |96h|
