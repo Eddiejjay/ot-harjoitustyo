@@ -17,7 +17,7 @@
 ### Komentorivikomennot 
 
 
-#### Koodin suoritus 
+#### Koodin suoritus kun repositorio kloonataan GitHubista
 mvn compile exec:java -Dexec.mainClass=reseptixapp.Main
 #### Testien ajo
 mvn test
@@ -26,6 +26,10 @@ mvn test jacoco:report
 
 ##### Checkstyle-raportti
 mvn jxr:jxr checkstyle:checkstyle
+
+#### JavaDoc generointi
+
+mvn javadoc:javadoc
 
 #### Jar-tiedoston luominen
 mvn package
