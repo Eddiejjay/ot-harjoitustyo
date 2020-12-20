@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus 
 
-Sovelluksen avulla käyttäjä voi katsoa ja lisätä reseptejä. 
+Sovelluksen avulla käyttäjä voi katsoa ja lisätä reseptejä sekä luoda viikkokohtaisia menuja. Käyttäjän on myös mahdollista arpoa resepti.
 
 ## Käyttäjät
 
