@@ -1,4 +1,4 @@
-#Testausdokumentti 
+# Testausdokumentti 
 
 Sovellusta on testattu integraatio- ja yksikkötesteillä. Junitin avulla.
 Järjestelmätason testaus on suoritettu manuaalisesti. 
@@ -13,6 +13,22 @@ kutsuvat pakkauksen reseptixapp.dao luokkien  databaseRecipeDao sekä databaseMe
 Integraatiotestit käyttävät testausta varten luotua tietokantaa testi.db. 
 
 ## Testauskattavuus 
+Testauksen rivikattavuus on 76% ja haarautumakattavuus 91%. Käyttöliittymää ei ole otettu testaukseen mukaan. 
 
 <img src=https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/jacoco.png/>
+
+## Järjestelmätestaus
+
+Järjestelmä testaus on suoritettu manuaalisesti.
+
+Sovellusta on testattu Yliopiston etätyöpöydällä Linux Cubbli käyttöjärjestelmällä. 
+
+## Toiminnallisuus 
+Sovelluksen toimintaa on testattu että se toimii kun ohjelmaan syötetään kaikki tarvittavat tiedot. 
+
+
+## Sovelluksen laatuongelmat 
+Virheellisiä syötteitä ei ole käsitelty. 
+Sovellus näyttää vasta toisen lisätyn menun, vaikka se tallentuukin tietokantaan. 
+
 
