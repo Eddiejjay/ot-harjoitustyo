@@ -33,8 +33,6 @@
 |17.12 |4h |tietokannan säätö|
 |18.12 |1,5h |koodin siistiminen + javadoc päivitys|
 |19.12|4h |testien säätö, jar testaus, checkstyle, databasedao luokkien siivous, esimerkkitietokannan teko |
-| | ||
-| | ||
-| | ||
+|20.12 |5h|dokumentaatio viimeistely, uusi release, final touch |
 
-| Yhteensä |91h| |
+| Yhteensä |96h| |
