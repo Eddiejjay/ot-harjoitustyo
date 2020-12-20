@@ -1,6 +1,6 @@
 # Käyttöohje 
 
-Lataa tiedosto [ReseptiXapp.jar](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/FinalRelease)
+Lataa tiedosto [ReseptiXapp.jar](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/loppupalautus)
 Lataa myös tiedostot recipesAndMenus.db sekä testi.db ja varmista että tallennat ne samaan kansioon jar- tiedoston kanssa.
 
 ## Ohjelman käynnistäminen
