@@ -21,7 +21,7 @@ Testauksen rivikattavuus on 76% ja haarautumakattavuus 91%. Käyttöliittymää 
 
 Järjestelmä testaus on suoritettu manuaalisesti.
 
-Sovellusta on testattu Yliopiston etätyöpöydällä Linux Cubbli käyttöjärjestelmällä. 
+Sovellusta on testattu yliopiston etätyöpöydällä Linux Cubbli käyttöjärjestelmällä. 
 
 ## Toiminnallisuus 
 Sovelluksen toimintaa on testattu että se toimii kun ohjelmaan syötetään kaikki tarvittavat tiedot. 
