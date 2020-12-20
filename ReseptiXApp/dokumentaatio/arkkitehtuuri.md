@@ -81,6 +81,9 @@ Tietokanta sisältää kolme taulua.
 Tietokantaan lisätään tietoa ja sieltä haetaan tietoa luokkien databaseRecipeDao sekä databaseMenuDao avulla. 
 
 
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+DAO toteutuksissa ei ole hyödynnetty rajapintoja. 
 
 
 
