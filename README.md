@@ -1,14 +1,6 @@
  # [ReseptiX App](https://github.com/Eddiejjay/ot-harjoitustyo/tree/master/ReseptiXApp)
  
  Sovelluksen avulla käyttäjä voi lisätä ja tarkastella omia reseptejään sekä luoda viikkokohtaisen ruokalistan. 
- 
--  Sovelluksen ensimmäisessä versiossa käyttäjä voi lisätä reseptejään sovellukseen. 
--  Sovelluksen toisessa versiossa sovellukseen on lisätty toiminnallisuus yksittäisten reseptien tarkasteluun sekä reseptin arpomiseen. (tarkemmat tiedon vaatimusmäärittelyssä) 
--  Sovelluksen kolmannessa versiossa graafinen käyttöliittymä uusittiin täysin Java FXML käyttäen sekä lisättiin toiminnallisuus viikon menun luomiseen'
-
--  Sovelluksen neljännessä versiossa menu toiminnallisuutta päivitettiin siten että menuja voi nyt tarkastella. Sovellukseen lisättiin tietokanta. 
-
-Sovelluksen seuraava kehitysaskel tulee olemaan menu toiminnallisuuden viimeistely mm. mahdollisuus arpoa reseptejä eri päiville.  Jos aikaa riittää sovellukseen ideoidaan lisää mielekästä käyttäjäystävällistä toiminnallisuutta. Sovellukseen on myös suunnitteilla datan tallennus tietokantaan.
 
 
  ## Dokumentaatio
