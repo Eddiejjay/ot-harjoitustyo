@@ -7,8 +7,6 @@ Ohjelmassa on kolmitasoinen kerrosarkkitehtuuri. Ohjelmassa on seuraavanlainan p
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/pakkausarkkitehtuuri.jpg">
 
 
-
-
 Pakkaus reseptixapp.ui sisältää Java FMXL: llä toteutetun graafisen käyttöliittymän, reseptixapp.domain sisältää sovelluslogiikan sekä reseptixapp.dao tietojen tallennuksen tietokantaan. 
 
 ## Käyttöliittymä
@@ -24,9 +22,6 @@ Käyttöliittymässä 5 erilaista näkymää.
 Näkymät on rakennettu java FXML: llä Scenebuilderia käyttäen. Jokainen näkymä on Scene- olio joka sijoitetaan sovelluksen stageen silloin kun sen halutaan olevan esillä. Jokaisella näkymällä on oma FXML tiedosto sekä kontrolleri luokka. Kontrolleri luokka määrittää mitä näkymän elementeissä näytetään ja mitä tapahtuu kun nappeja painetaan. 
 
 Kaikkien näkymien yhteistoimintaa ohjaa luokka FXMLUI. 
-
-
-ESIMERKKEJÄ NAPPIEN TOIMINNASTA ?
 
 
 ## Sovelluslogiikka 
@@ -48,11 +43,17 @@ MenuManagement luokka tarjoaa seuraavat metodit
 - getAllMenus() 
 
 Management luokat pääsevät käsiksi tietokantaan luokkien DatabaseRecipeDao ja DatabaseMenuDao kautta. 
+###  Managemennt luokkien ja sovelluksn muiden osien yhteyksiä kuvaava luokka/pakkauskaavio: 
 
-TÄHÄN KUVA LUOKKA/PAKKAUSKAAVIO
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/LuokkaPakkausKaavio.JPG">
+##  Päätoiminnallisuudet
 
+### Reseptin lisäys metodin toiminta 
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/addRecipeSekvenssi.png">
 
-<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/AddRecipeSekvenssikaavio.png">
+### Menun lisäys metodin toiminta 
+
+<img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/createMenuSekvenssi.png">
 
 
 ## Tietojen pysyväistallennus 
@@ -69,17 +70,6 @@ Tietokanta sisältää kolme taulua.
 <img src="https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/Kuvat/tietokantataulut.png">
 
 Tietokantaan lisätään tietoa ja sieltä haetaan tietoa luokkien databaseRecipeDao sekä databaseMenuDao avulla. 
-
-
-## Päätoiminnallisuudet 
-
-Reseptin lisääminen 
-
-Menun lisääminen 
-
-Reseptin katsominen 
-
-
 
 
 
