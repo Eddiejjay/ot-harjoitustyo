@@ -11,7 +11,7 @@
  - ##### [Työaikakirjanpito](https://github.com/Eddiejjay/ot-harjoitustyo/blob/master/ReseptiXApp/dokumentaatio/tuntikirjanpito.md)
  
  ## Releaset
- [Viikko 6](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/jee)
+ [Final release](https://github.com/Eddiejjay/ot-harjoitustyo/releases/tag/FinalRelease)
  
 
 ### Komentorivikomennot 
