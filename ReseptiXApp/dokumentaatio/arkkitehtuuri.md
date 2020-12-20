@@ -44,7 +44,7 @@ RecipeManagement luokka tarjoaa seuraavat metodit
 - getAll() 
 
 MenuManagement luokka tarjoaa seuraavat metodit
-- createMenu(String name, List<Recipe> recipes)
+- createMenu(String name, List <Recipe> recipes)
 - getAllMenus() 
 
 Management luokat pääsevät käsiksi tietokantaan luokkien DatabaseRecipeDao ja DatabaseMenuDao kautta. 
